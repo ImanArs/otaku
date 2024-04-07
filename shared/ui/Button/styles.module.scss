@@ -1,0 +1,32 @@
+.button {
+  color: #fff;
+  border: none;
+  background: none;
+  width: transparent;
+}
+.button__red {
+  background: url(../../../public/assets/images/red-button.png);
+  padding: 9px 34px 17px 34px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.button__black {
+  background: url(../../../public/assets/images/black_btn_bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 7px 24px 14px 24px;
+  
+  &::after {
+    z-index: -1;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    content: '';
+    width: 10%; 
+    height: 46%;
+    background: url(../../../public/assets/images/triangle_bg.png);
+    background-repeat: no-repeat; 
+    background-size: cover;
+  }
+}

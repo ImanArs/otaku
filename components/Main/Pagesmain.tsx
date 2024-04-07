@@ -1,3 +1,4 @@
+import { Button } from '@/shared/ui/Button';
 import s from './pagesmain.module.scss';
 
 export default function Pagesmain() {

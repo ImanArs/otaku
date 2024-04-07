@@ -105,3 +105,17 @@ a {
     color-scheme: dark;
   }
 }
+
+
+.primary {
+  width: 263px;
+  font-size: 36px;
+}
+.primary1 {
+  width: 200px;
+  font-size: 26px;
+}
+.primary2 {
+  width: 160px;
+  font-size: 20px;
+}
