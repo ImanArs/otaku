@@ -1,0 +1,32 @@
+.header {
+  position: fixed;
+  width: 100%;
+  &_images {
+    position: absolute;
+    z-index: 1;
+    max-width: 2560px;
+    width: 100%;
+  }
+  &_blocks {
+    position: relative;
+    padding: 20px 12%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &_text {
+      display: flex;
+      gap: 10px;
+      h3 {
+        font-size: 48px;
+        color: black;
+      }
+    }
+  }
+}
+.lini {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

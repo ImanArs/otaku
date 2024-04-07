@@ -1,0 +1,119 @@
+.main {
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-between;
+}
+.main_one {
+  display: flex;
+  gap: 50px;
+}
+.main_two {
+  img {
+    margin-top: 30px;
+    width: 750px;
+    height: 500px;
+  }
+}
+.qr {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.qq {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.imgkrug {
+  margin-bottom: 20px;
+  margin-left: 10px;
+  width: 70px;
+}
+.qwe {
+  margin-top: 100px;
+  width: 540px;
+  h3 {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 60px;
+  }
+  &_red {
+    margin-left: 5px;
+    p {
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 60px;
+      color: rgba(221, 44, 64, 1);
+    }
+    div {
+      span {
+        position: absolute;
+        color: #fff;
+        margin-left: 40px;
+        margin-top: 10px;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 43px;
+      }
+    }
+  }
+  &_black {
+    display: flex;
+    gap: 10px;
+    &_one {
+      width: 270px;
+    }
+    &_img {
+      display: flex;
+      flex-direction: column;
+      margin-top: 45px;
+      height: 20px;
+      gap: 3px;
+    }
+  }
+}
+@media screen and (min-width: 1440px) {
+  .qwe {
+    margin-top: 100px;
+    width: 540px;
+    h3 {
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 60px;
+    }
+    &_red {
+      margin-left: 5px;
+      p {
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 60px;
+        color: rgba(221, 44, 64, 1);
+      }
+      div {
+        span {
+          position: absolute;
+          color: #fff;
+          margin-left: 40px;
+          margin-top: 10px;
+          font-size: 36px;
+          font-weight: 400;
+          line-height: 43px;
+        }
+      }
+    }
+    &_black {
+      display: flex;
+      gap: 10px;
+      &_one {
+        width: 270px;
+      }
+      &_img {
+        display: flex;
+        flex-direction: column;
+        margin-top: 45px;
+        height: 20px;
+        gap: 3px;
+      }
+    }
+  }
+}
