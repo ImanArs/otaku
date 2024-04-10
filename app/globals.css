@@ -99,6 +99,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
+button {
+  cursor: pointer;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -106,16 +109,57 @@ a {
   }
 }
 
+.mySwiperBlack {
+  height: 400px;
+}
+.sm {
+  height: 180px;
+}
+.mySwiperBlack .swiper-pagination,
+.mySwiperBlack .swiper-pagination-clickable,
+.mySwiperBlack .swiper-pagination-bullets,
+.mySwiperBlack .swiper-pagination-horizontal {
+  bottom: 0 !important;
+  z-index: 999 !important;
+  /* background: red !important; */
+}
+.sm .swiper-pagination-horizontal{
+  right: 0 !important;
+}
+.mySwiperBlack .swiper-pagination-bullet {
+  width: 15px !important;
+  height: 15px !important;
+  background: #fff !important;
+  border: 3px solid #000 !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+}
+.mySwiperBlack .swiper-pagination-bullet-active {
+  width: 77px !important;
+  background: #000 !important;
+}
 
-.primary {
-  width: 263px;
-  font-size: 36px;
+
+.mySwiper {
+  height: 400px;
 }
-.primary1 {
-  width: 200px;
-  font-size: 26px;
+.mySwiper .swiper-pagination,
+.mySwiper .swiper-pagination-clickable,
+.mySwiper .swiper-pagination-bullets,
+.mySwiper .swiper-pagination-horizontal {
+  bottom: 0px !important;
+  z-index: 999 !important;
+  /* background: red !important; */
 }
-.primary2 {
-  width: 160px;
-  font-size: 20px;
+.mySwiper .swiper-pagination-bullet {
+  width: 15px !important;
+  height: 15px !important;
+  background: #000 !important;
+  border: 3px solid #fff !important;
+  border-radius: 0 !important;
+  opacity: 1 !important;
+}
+.mySwiper .swiper-pagination-bullet-active {
+  width: 77px !important;
+  background: #fff !important;
 }

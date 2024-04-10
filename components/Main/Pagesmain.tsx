@@ -18,7 +18,7 @@ export default function Pagesmain() {
             <p>...</p>
             <div>
               <span>Каталог</span>
-              <img src="/assets/images/red-button.png" alt="logo" />
+              <img src="/assets/images/btn_bg_red.png" alt="logo" />
             </div>
           </div>
           <div className={s.qwe_black}>
