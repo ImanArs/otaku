@@ -12,10 +12,12 @@
     position: relative;
     grid-template-columns: repeat(5, 1fr);
     gap: 60px 20px;
-    .bestsellers_button {
-      font-size: 36px;
-      width: 263px;
-    }
+  }
+  .bestsellers_button {
+    max-width: 1260px;
+    width: 100%;
+    font-size: 36px;
+    width: 263px;
   }
   &::before {
     width: 100%;

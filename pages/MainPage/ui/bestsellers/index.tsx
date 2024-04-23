@@ -1,23 +1,26 @@
-import React from 'react'
-
-import { Button } from '@/shared/ui/Button'
-import { ProductCard } from '@/shared/ui/ProductCard'
-import { Search } from '@/shared/ui/Search'
-
-import cls from './styles.module.scss'
+'use client'
+import React, { useEffect, useState } from 'react';
+import { Button } from '@/shared/ui/Button';
+import { ProductCard } from '@/shared/ui/ProductCard';
+import { Search } from '@/shared/ui/Search';
+import cls from './styles.module.scss';
+import useProduct from '@/hook/UseProduct';
 
 export const MainBestSellers = () => {
-  const newestData = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+  const products = useProduct();
+
   return (
     <div className={cls.bestsellers}>
-      <div className={cls.top}/>
+      <div className={cls.top} />
       <Search />
       <div className={cls.bestsellers_wrapper}>
-        {newestData.slice(0,10).map((card, index) => (
-          <ProductCard key={index} />
+       {products.map((product, index) => (
+          <ProductCard key={index} product={product} />
         ))}
-        <Button className={cls.bestsellers_button} type='black'>Больше</Button>
       </div>
+        <Button className={cls.bestsellers_button} type='black'>
+          Больше
+        </Button>
     </div>
-  )
-}
+  );
+};
