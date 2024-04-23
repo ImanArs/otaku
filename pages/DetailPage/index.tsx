@@ -37,9 +37,9 @@ export const DetailPage = () => {
       <section className={cls.also_look}>
         <h2>смотрите так же</h2>
         <div className={cls.wrapper}>
-          {[1,2,3,4,5].map((card, index) => (
+          {/* {[1,2,3,4,5].map((card, index) => (
             <ProductCard key={index} />
-          ))}
+          ))} */}
         </div>
       </section>
     </main>

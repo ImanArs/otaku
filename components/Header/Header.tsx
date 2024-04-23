@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import s from './header.module.scss';
 import { HeaderMenu } from './ui/menu';
+import Link from 'next/link';
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(false)
@@ -27,7 +28,9 @@ export default function Header() {
         alt=""
       />
       <div className={s.header_blocks}>
-        <img src="/assets/images/logo.svg" alt="logo" />
+        <Link href="/">
+          <img src="/assets/images/logo.svg" alt="logo" />
+        </Link>
         <div className={s.header_blocks_text} ref={menuRef} onClick={() => setOpenMenu(!openMenu)}>
           <h3>MENU</h3>
           <div className={s.lini}>
