@@ -15,8 +15,6 @@ interface Product {
 }
 
 export const ProductCard = ({ product }: { product: Product }) => {
-  console.log(product);
-  
   const isFavourite = Math.random() > 0.5
   const quantity = false
   const sale = false
