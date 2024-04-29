@@ -1,11 +1,29 @@
-"use client";
+"use client"
 import React, { useState } from "react";
 import cls from "./styles.module.scss";
 import { Checkbox } from "../checkbox";
+import { useCategory, useSubCategory } from "@/hook/UseCategory";
+
+
+interface Category {
+  id: number;
+  name: string;
+}
 
 export const Sidebar = () => {
   const [amount, setAmount] = useState({ min: 0, max: 100 });
   const [checked, setChecked] = useState(false);
+  const categories = useCategory()
+  const [checkedItems, setCheckedItems] = useState<{ [key: string]: boolean }>({}); 
+  const handleCheckboxChange = (id: string, isChecked: boolean) => {
+    setCheckedItems(prevState => ({
+      ...prevState,
+      [id]: isChecked,
+    }));
+  };
+  const subCategories = useSubCategory(); 
+  console.log(categories);
+  
   const changeRange = (
     event: React.ChangeEvent<HTMLInputElement>,
     key: string
@@ -15,11 +33,11 @@ export const Sidebar = () => {
 
   const onSubmit = (e: any) => {
     e.preventDefault();
-    console.log(123);
   };
+
   return (
     <aside>
-      <form  className={cls.sidebar} onSubmit={onSubmit}>
+      <form className={cls.sidebar} onSubmit={onSubmit}>
         <div className={cls.sidebar_amountWrapper}>
           <div className={cls.amount}>
             <input
@@ -54,67 +72,29 @@ export const Sidebar = () => {
         </div>
 
         <div className={cls.filter}>
-          <Checkbox
-            checked={checked}
-            onChange={(e) => setChecked(e.target.checked)}
-            label={<h3>Фигурки</h3>}
-            className={cls.heading}
-          />
-          <ul>
-            <li>
-              <Checkbox
-                checked={checked}
-                onChange={(e) => setChecked(e.target.checked)}
-                label="Акриловые стенды"
-              />
-            </li>
-            <li>
-              <Checkbox
-                checked={checked}
-                onChange={(e) => setChecked(e.target.checked)}
-                label="Чиби фигурки"
-              />
-            </li>
-            <li>
-              <Checkbox
-                checked={checked}
-                onChange={(e) => setChecked(e.target.checked)}
-                label="3D Экшн-фигурки"
-              />
-            </li>
-          </ul>
+          {categories && categories?.map((category: Category) => ( 
+            <Checkbox
+              key={category.id}
+              id={category.id} 
+              checked={!!checkedItems[category.id]}
+              onChange={handleCheckboxChange} 
+              label={category.name}
+              className={cls.heading}
+            />
+          ))}
         </div>
-        <div className={cls.filter}>
-          <Checkbox
-            checked={checked}
-            onChange={(e) => setChecked(e.target.checked)}
-            label={<h3>Фигурки</h3>}
-            className={cls.heading}
-          />
-          <ul>
-            <li>
-              <Checkbox
-                checked={checked}
-                onChange={(e) => setChecked(e.target.checked)}
-                label="Акриловые стенды"
-              />
-            </li>
-            <li>
-              <Checkbox
-                checked={checked}
-                onChange={(e) => setChecked(e.target.checked)}
-                label="Чиби фигурки"
-              />
-            </li>
-            <li>
-              <Checkbox
-                checked={checked}
-                onChange={(e) => setChecked(e.target.checked)}
-                label="3D Экшн-фигурки"
-              />
-            </li>
-          </ul>
-        </div>
+        {/* <div className={cls.filter}>
+          {subCategories && subCategories?.map((subCategories: Category) => ( // Добавлено условие
+            <Checkbox
+              key={subCategories.id}
+              checked={checked}
+              onChange={(e) => setChecked(e.target.checked)}
+              label={subCategories.name}
+              className={cls.heading}
+            />
+          ))}
+        </div> */}
+
         <button type="submit">сбросить</button>
       </form>
     </aside>

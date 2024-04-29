@@ -1,0 +1,64 @@
+.main{
+    max-width: 1200px;
+    height: 110vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    font-family: var(--vivl-font)
+}
+
+.favorite{
+ h1{
+    font-family: var(--vivl-font);
+    font-size: 48px;
+    font-weight: 400;
+    color: #FFF;
+    line-height: 58px;
+ }
+}
+.authtext{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    p{
+        font-family: var(--vivl-font);
+        font-size: 40px;
+        font-weight: 900;
+        color: rgba(221, 44, 64, 1);
+        line-height: 58px;
+    }
+    span{
+        color: #FFF;
+    }
+}
+.favoritetext{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    p{
+        font-family: var(--vivl-font);
+        font-size: 40px;
+        font-weight: 900;
+        color: #FFF;
+        line-height: 58px;
+    }
+    span{
+        font-size: 20px;
+        margin-top: 10px;
+        text-align: center;
+        color: #FFF;
+    }
+    Button{
+        font-family: var(--vivl-font);
+        margin-top: 20px;
+        font-size: 40px;
+        font-weight: 900;
+        color: #FFF;
+        line-height: 58px;
+    }
+}
