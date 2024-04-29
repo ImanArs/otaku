@@ -35,8 +35,24 @@
     height: 100%;
     transform: rotate(-25deg);
   }
+  position: relative;
 }
 .search_reversed {
   display: flex;
   flex-direction: row-reverse;
+}
+.search_results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+  border-top: none;
+  //display: none;
+  z-index: 10;
+  &.active {
+    display: block;
+  }
 }

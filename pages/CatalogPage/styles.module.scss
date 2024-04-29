@@ -1,0 +1,26 @@
+.catalogPage {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  .sidebar {
+    position: fixed;
+   // z-index: 10;
+  }
+  .catalogContent {
+    margin-left: 300px;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .search {
+      // width: 100%;
+      margin: 0 auto;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+  }
+}
