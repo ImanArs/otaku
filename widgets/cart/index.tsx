@@ -20,7 +20,6 @@ const mockData = [
 export const CartWidget = () => {
   const [openCart, setOpenCart] = React.useState(false)
   const handleClick = () => {
-    console.log('wasClick');
     setOpenCart(!openCart)
   }
   return (

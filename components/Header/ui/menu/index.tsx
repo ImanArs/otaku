@@ -3,7 +3,7 @@ import cls from './styles.module.scss'
 import Link from 'next/link'
 
 const headerMenuLinks = [
-  {name: 'каталог', link: '#'},
+  {name: 'каталог', link: '/catalog'},
   {name: 'Контакты', link: '/contacts'},
   {name: 'МАГАЗИНЫ', link: '#'},
   {name: 'Доставка', link: '#'},

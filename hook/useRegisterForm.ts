@@ -1,4 +1,4 @@
-import Router from 'next/router';
+// import Router from 'next/router';
 import { useState } from 'react';
 
 interface FormData {
@@ -12,7 +12,6 @@ interface FormData {
 }
 
 const useRegisterForm = () => {
-
   const [formData, setFormData] = useState<FormData>({
     id: 0,
     first_name: '',
@@ -51,7 +50,17 @@ const useRegisterForm = () => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-      Router.push('/'); 
+
+      const data = await response.json();
+
+      const { accesstoken } = data;
+      console.log(data);
+      console.log(accesstoken);
+      
+      
+
+      document.cookie = `token=${accesstoken}; path=/`;
+
       setFormData({
         id: 0,
         first_name: '',

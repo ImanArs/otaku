@@ -12,7 +12,7 @@ const useProduct = () => {
           throw new Error('Failed to fetch products');
         }
         const data = await response.json();
-        console.log(data.results);
+        // console.log(data.results);
         setProducts(data.results);
       } catch (error) {
         console.error('Error fetching products:', error);

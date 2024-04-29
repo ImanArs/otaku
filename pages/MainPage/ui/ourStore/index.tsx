@@ -29,7 +29,6 @@ export const OurStore = () => {
             modules={[Pagination, A11y]}
             slidesPerView={1}
             pagination={{ clickable: true }}
-            onSwiper={(swiper) => console.log(swiper)}
             className='mySwiper'
             >
               <SwiperSlide><img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="" /></SwiperSlide>

@@ -1,12 +1,15 @@
-"use client"
 import { useState } from 'react';
 import s from './register.module.scss';
 import { Button } from '@/shared/ui/Button';
 import X from '@/public/assets/icons/x.svg';
 import useAuthentication from '@/hook/useAuthentication';
 
-const Login = () => {
-  const [showModal, setShowModal] = useState(false);
+interface Props {
+  showModal: boolean;
+  setShowModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Login: React.FC<Props> = ({ showModal, setShowModal }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { authenticate, error, isLoading } = useAuthentication();
@@ -30,11 +33,13 @@ const Login = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await authenticate(email, password);
+    if (!error) {
+      closeModal();
+    }
   };
 
   return (
     <div>
-      <button className={s.qwe} onClick={openModal}>Open Register Modal</button>
       {showModal && (
         <div className={s.modal}>
           <div className={s.modalContent}>

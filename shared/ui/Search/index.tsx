@@ -1,57 +1,66 @@
-'use client'
 import React, { useState } from 'react';
 import cls from './styles.module.scss';
 import classNames from 'classnames';
+import Link from 'next/link';
 
-interface Props {
+interface Product {
+  id: number;
+  title: string;
+}
+
+interface SearchProps {
   reversed?: boolean;
-  placeholder?: string;
-  btnTitle?: string;
-  value?: string;
   className?: string;
-  onChange?: () => void;
-  searchArr?: any[];
+  searchArr: Product[];
 }
 
-export const Search = (props: Props) => {
-  const { reversed = false, placeholder, btnTitle, value, className, searchArr, onChange } = props;
-  const [openSearch, setOpenSearch] = useState(false);
-  const [searchResults, setSearchResults] = useState(searchArr || []);
+export const Search: React.FC<SearchProps> = ({ reversed, className, searchArr }) => {
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [openSearch, setOpenSearch] = useState<boolean>(false); 
+  const filteredProducts = searchArr.filter(product =>
+    product.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
-  const filterSearch = (title: string) => {
-    const filteredResults: any = searchArr?.filter((item) => item.title.toLowerCase().includes(title.toLowerCase()));
-    setSearchResults(filteredResults);
-    if (title === '') {
-      setOpenSearch(false)
-    }
-  }
+  const toggleSearch = () => {
+    setOpenSearch(!openSearch); 
+    setSearchTerm(''); 
+  };
+
   return (
-    <div className={classNames('', {
-      [cls.search_reversed]: reversed
-    }, [cls.search, className])}>
-      <button onClick={() => setOpenSearch(!openSearch)}>{btnTitle ? btnTitle : 'Поиск в каталоге'}</button>
-      <input 
-        type="text" 
-        name="" 
-        id="" 
-        value={value}
-        placeholder={placeholder ? placeholder : 'Начните вводить название товара'}
-        onChange={(e) => filterSearch(e.target.value)}
-      />
-      <div className={cls.search_results}>
-      {
-        openSearch ? (
-            searchResults?.map((item, index) => (
-                <div key={index} className={cls.search_result}>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </div>
-            ))
-        ) : (
-          <p>ничего не найдено</p>
-        )
-      }
+    <>
+      <div className={classNames('', {
+        [cls.search_reversed]: reversed
+      }, [cls.search, className])}>
+        <button onClick={toggleSearch}>
+          {openSearch ? 'Закрыть поиск' : 'Поиск в каталоге'}
+        </button>
+        {openSearch && ( 
+          <>
+            <input 
+              type="text" 
+              name="" 
+              id="" 
+              value={searchTerm}
+              placeholder='Начните вводить название товара'
+              onChange={e => setSearchTerm(e.target.value)}
+            />
+            <div className={cls.search_results}>
+              {searchTerm && (
+                <ul>
+                  {filteredProducts.map(product => (
+                    <li key={product.id}>
+                      <Link href={`/detail/${product.id}`}>
+                      {product.title}
+                      </Link>
+                    
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </>
+        )}
       </div>
-    </div>
-  )
-}
+    </>
+  );
+};
