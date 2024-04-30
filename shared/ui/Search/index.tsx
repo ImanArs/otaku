@@ -17,7 +17,7 @@ interface SearchProps {
 export const Search: React.FC<SearchProps> = ({ reversed, className, searchArr }) => {
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [openSearch, setOpenSearch] = useState<boolean>(false); 
-  const filteredProducts = searchArr.filter(product =>
+  const filteredProducts = searchArr?.filter(product =>
     product.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -47,7 +47,7 @@ export const Search: React.FC<SearchProps> = ({ reversed, className, searchArr }
             <div className={cls.search_results}>
               {searchTerm && (
                 <ul>
-                  {filteredProducts.map(product => (
+                  {filteredProducts?.map(product => (
                     <li key={product.id}>
                       <Link href={`/detail/${product.id}`}>
                       {product.title}

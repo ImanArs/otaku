@@ -1,9 +1,8 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import cls from "./styles.module.scss";
 import { Checkbox } from "../checkbox";
 import { useCategory, useSubCategory } from "@/hook/UseCategory";
-
 
 interface Category {
   id: number;
@@ -11,19 +10,28 @@ interface Category {
 }
 
 export const Sidebar = () => {
-  const [amount, setAmount] = useState({ min: 0, max: 100 });
-  const [checked, setChecked] = useState(false);
-  const categories = useCategory()
-  const [checkedItems, setCheckedItems] = useState<{ [key: string]: boolean }>({}); 
+  const initialAmount = { min: 0, max: 100 };
+  const initialCheckedItems: { [key: string]: boolean } = {};
+  const [amount, setAmount] = useState(initialAmount);
+  const [checkedItems, setCheckedItems] = useState(initialCheckedItems);
+  const categories = useCategory();
+
+  useEffect(() => {
+    // Reset checkedItems when categories change
+    const resetCheckedItems = categories.reduce((acc, category: Category) => {
+      acc[category.id.toString()] = false;
+      return acc;
+    }, {} as { [key: string]: boolean });
+    setCheckedItems(resetCheckedItems);
+  }, [categories]);
+
   const handleCheckboxChange = (id: string, isChecked: boolean) => {
     setCheckedItems(prevState => ({
       ...prevState,
       [id]: isChecked,
     }));
   };
-  const subCategories = useSubCategory(); 
-  console.log(categories);
-  
+
   const changeRange = (
     event: React.ChangeEvent<HTMLInputElement>,
     key: string
@@ -31,29 +39,40 @@ export const Sidebar = () => {
     setAmount((prevAmount) => ({ ...prevAmount, [key]: event.target.value }));
   };
 
-  const onSubmit = (e: any) => {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    // Handle form submission
+  };
+
+  const handleReset = () => {
+    setAmount(initialAmount);
+    setCheckedItems(initialCheckedItems);
   };
 
   return (
+    <>
     <aside>
+      <img src="/assets/icons/Rectangle122.svg" alt="" className={cls.qwe} />
       <form className={cls.sidebar} onSubmit={onSubmit}>
         <div className={cls.sidebar_amountWrapper}>
           <div className={cls.amount}>
             <input
-              type="number"
+              type="text"
               value={amount.min}
               onChange={(e) => changeRange(e, "min")}
-            />
+              // className={cls.input1} 
+              />
             <span>сом</span>
+              <img className={cls.input1} src="/assets/icons/Rectangle230.svg" alt="" />
           </div>
           <div className={cls.amount}>
             <input
-              type="number"
+              type="text"
               value={amount.max}
               onChange={(e) => changeRange(e, "max")}
-            />
+              />
             <span>сом</span>
+            <img className={cls.input2} src="/assets/icons/Rectangle227.svg" alt="" />
           </div>
         </div>
         <div className={cls.range}>
@@ -62,41 +81,32 @@ export const Sidebar = () => {
             min={0}
             max={50}
             onChange={(e) => changeRange(e, "min")}
-          />
+            />
           <input
             type="range"
             min={50}
             max={100}
             onChange={(e) => changeRange(e, "max")}
-          />
+            />
         </div>
 
         <div className={cls.filter}>
           {categories && categories?.map((category: Category) => ( 
             <Checkbox
-              key={category.id}
-              id={category.id} 
-              checked={!!checkedItems[category.id]}
+            key={category.id}
+            id={category.id} 
+            checked={!!checkedItems[category.id]}
               onChange={handleCheckboxChange} 
               label={category.name}
               className={cls.heading}
-            />
-          ))}
+              />
+            ))}
         </div>
-        {/* <div className={cls.filter}>
-          {subCategories && subCategories?.map((subCategories: Category) => ( // Добавлено условие
-            <Checkbox
-              key={subCategories.id}
-              checked={checked}
-              onChange={(e) => setChecked(e.target.checked)}
-              label={subCategories.name}
-              className={cls.heading}
-            />
-          ))}
-        </div> */}
 
-        <button type="submit">сбросить</button>
+
+        <button type="button" onClick={handleReset}>сбросить</button>
       </form>
     </aside>
+            </>
   );
 };
