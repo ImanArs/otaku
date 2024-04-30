@@ -60,7 +60,6 @@ export const Sidebar = () => {
               type="text"
               value={amount.min}
               onChange={(e) => changeRange(e, "min")}
-              // className={cls.input1} 
               />
             <span>сом</span>
               <img className={cls.input1} src="/assets/icons/Rectangle230.svg" alt="" />

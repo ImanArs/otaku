@@ -9,7 +9,7 @@ const headerMenuLinks = [
   {name: 'Доставка', link: '#'},
   {name: 'siad90sau', link: '#'},
   {name: 'вОЗВРАТ', link: '#'},
-  {name: 'О нас', link: '#'},
+  {name: 'О нас', link: '/about'},
 ]
 
 export const HeaderMenu = () => {

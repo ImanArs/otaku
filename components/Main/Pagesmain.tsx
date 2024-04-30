@@ -1,5 +1,6 @@
 import { Button } from '@/shared/ui/Button';
 import s from './pagesmain.module.scss';
+import Link from 'next/link';
 
 export default function Pagesmain() {
   return (
@@ -17,7 +18,8 @@ export default function Pagesmain() {
           <div className={s.qwe_red}>
             <p>...</p>
             <div>
-              <span>Каталог</span>
+             
+              <Link href='/catalog'><span>Каталог</span></Link>
               <img src="/assets/images/btn_bg_red.png" alt="logo" />
             </div>
           </div>

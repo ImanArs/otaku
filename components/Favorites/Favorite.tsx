@@ -4,6 +4,7 @@ import { Button } from "@/shared/ui/Button";
 import s from "./favorite.module.scss";
 import Login from '../auth/Login';
 import Register from '../auth/Register';
+import Link from 'next/link';
 
 const Favorites: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -36,7 +37,7 @@ const Favorites: React.FC = () => {
             Добавьте товары в “избранное”,<br />
             чтобы они отобразились на этой странице
           </span>
-          <Button type="red">Каталог</Button>
+          <Link href="/catalog"><Button type="red">Каталог</Button></Link>
         </div>
       ) : (
         <div className={s.authtext}>
