@@ -1,22 +1,22 @@
-'use client'
-import { useEffect, useRef, useState } from 'react';
-import s from './header.module.scss';
-import { HeaderMenu } from './ui/menu';
-import Link from 'next/link';
+"use client";
+import { useEffect, useRef, useState } from "react";
+import s from "./header.module.scss";
+import { HeaderMenu } from "./ui/menu";
+import Link from "next/link";
 
 export default function Header() {
-  const [openMenu, setOpenMenu] = useState(false)
-  const menuRef = useRef<HTMLDivElement | null>(null)
+  const [openMenu, setOpenMenu] = useState(false);
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent ) {
+    function handleClickOutside(event: MouseEvent) {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setOpenMenu(false);
       }
     }
-    document.addEventListener('click', handleClickOutside);
+    document.addEventListener("click", handleClickOutside);
     return () => {
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener("click", handleClickOutside);
     };
   }, [menuRef]);
 
@@ -31,20 +31,22 @@ export default function Header() {
         <Link href="/">
           <img src="/assets/images/logo.svg" alt="logo" />
         </Link>
-        <div className={s.header_blocks_text} ref={menuRef} onClick={() => setOpenMenu(!openMenu)}>
+        <div
+          className={s.header_blocks_text}
+          ref={menuRef}
+          onClick={() => setOpenMenu(!openMenu)}
+        >
           <h3>MENU</h3>
           <div className={s.lini}>
             <img src="/assets/images/lini-menu.svg" alt="logo" />
             <img src="/assets/images/lini-menu.svg" alt="logo" />
             <img src="/assets/images/lini-menu.svg" alt="logo" />
           </div>
-          {
-            openMenu && (
+          {openMenu && (
             <div className={s.menu}>
               <HeaderMenu />
             </div>
-            )
-          }
+          )}
         </div>
       </div>
     </header>
