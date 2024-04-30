@@ -1,0 +1,90 @@
+.about{
+
+    h1{
+        max-width: 1200px;
+        font-size: 48px;
+        font-weight: 400;
+        line-height: 58px;
+        margin-bottom: 30px;
+        font-family: var(--vivl-font);
+        width: 100%;
+        margin: 70px auto;
+
+    }
+    &_one{
+        max-width: 1200px;
+        width: 100%;
+        font-family: var(--vivl-font);
+        height: 110vh;
+        display: flex;
+        margin: 0 auto;
+        margin-top: 100px;
+        justify-content: space-between;
+        gap: 100px;
+        &_text{
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 29px;
+            font-family: var(--vivl-font);
+        }
+    }
+    &_two{
+        margin-top: -500px;
+        height: 50vh;
+        background-image: url(../../public/assets/images/Frame58.png);
+        div{
+            width: 50%;
+            z-index: 9;
+            display: flex;
+            flex-direction: column;
+            p{
+                margin-top: 70px;
+                margin-left: 40px;
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 29px;
+                font-family: var(--vivl-font);
+                color: black;
+                margin-bottom: 30px;
+            }
+            Button{
+                width: 400px;
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 29px;
+                margin: 0 auto;
+            }
+        }
+    }
+    &_thee{
+        max-width: 1200px;
+        width: 100%;
+        font-family: var(--vivl-font);
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        justify-content: space-between;
+        h5{
+            font-size: 24px;
+                    font-weight: 400;
+                    line-height: 29px;
+                    margin-top: 30px;
+        }
+        &_text{
+            display: flex;
+            gap: 80px;
+            &_box{
+                display: block;
+                margin-top: 30px;
+                Button{
+                    width: 80%;
+                    font-size: 24px;
+                    font-weight: 400;
+                    line-height: 29px;
+                    margin-top: 30px;
+                    font-family: var(--vivl-font);
+                }
+            }
+        }
+    }
+}

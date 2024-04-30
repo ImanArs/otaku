@@ -13,7 +13,7 @@ const secondLinks = [
   {name: 'МАГАЗИНЫ', link: '#'},
   {name: 'Доставка', link: '#'},
   {name: 'вОЗВРАТ', link: '#'},
-  {name: 'О нас', link: '#'},
+  {name: 'О нас', link: '/about'},
   {name: 'Q&A', link: '#'},
 ]
 
