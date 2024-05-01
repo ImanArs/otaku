@@ -1,12 +1,8 @@
-import DetailPage from '@/pages/DetailPage';
-import React from 'react';
+import DetailPage from "@/pages/DetailPage";
+import React from "react";
 
 const Detail = () => {
-
-  return(
-
-    <div>ss</div>
-  )
+  return <div></div>;
 };
 
 export default Detail;
