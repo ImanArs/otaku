@@ -95,13 +95,13 @@ body {
   overflow-x: hidden;
 }
 
-ul,ol {
+ul,
+ol {
   list-style: none;
 }
 a {
   text-decoration: none;
 }
-
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -141,7 +141,7 @@ button {
   z-index: 999 !important;
   /* background: red !important; */
 }
-.sm .swiper-pagination-horizontal{
+.sm .swiper-pagination-horizontal {
   right: 0 !important;
 }
 .mySwiperBlack .swiper-pagination-bullet {
@@ -156,7 +156,6 @@ button {
   width: 77px !important;
   background: #000 !important;
 }
-
 
 .mySwiper {
   height: 400px;
@@ -181,4 +180,3 @@ button {
   width: 77px !important;
   background: #fff !important;
 }
-
