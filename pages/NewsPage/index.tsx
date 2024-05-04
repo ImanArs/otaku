@@ -1,11 +1,11 @@
-import React from "react";
-import cls from "./styles.module.scss";
+import React from 'react';
+import cls from './styles.module.scss';
 
 const NewsPage = () => {
   return (
     <main className={cls.root}>
-      <h1>Новости</h1>
       <section className={cls.news_wrapper}>
+        <h1>Новости</h1>
         {[1, 2, 3, 4, 5, 6].map((card, index) => (
           <article className={cls.news_card} key={index}>
             <div className={cls.card_wrapper}>
