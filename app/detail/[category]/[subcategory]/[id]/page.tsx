@@ -4,8 +4,8 @@ import { Button } from "@/shared/ui/Button";
 import cls from "../../styles.module.scss";
 import { Metadata } from "next";
 import { getPostById } from "@/hook/usePro";
-import { DetailGallery } from "@/pages/DetailPage/ui/Gallery";
-import { ProductVariantCard } from "@/pages/DetailPage/ui/ProductVariantCard";
+import DetailGallery from "@/pages/DetailPage/ui/Gallery";
+import ProductVariantCard from "@/pages/DetailPage/ui/ProductVariantCard";
 import { useSearchParams } from "next/navigation";
 import useProduct from "@/hook/UseProduct";
 import { ProductCard } from "@/shared/ui/ProductCard";
@@ -45,7 +45,7 @@ const DetailPage: React.FC<Props> = ({ params: { id, category } }: Props) => {
 
   useEffect(() => {
     if (category && category !== "detail") {
-      const categoryCodename = category.split("/")[0]; // Get the category codename from the URL
+      const categoryCodename = category.split("/")[0];
       const filtered = products.filter((product) =>
         product.category.codename.includes(categoryCodename)
       );

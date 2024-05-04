@@ -7,12 +7,12 @@ interface CheckboxProps {
   label?: string | React.ReactNode;
   checked: boolean;
   className?: string;
-  codenamesub: string;
+  codenamesub?: string;
   codename: string;
   onChange: (id: string, checked: boolean) => void;
 }
 
-export const Checkbox: React.FC<CheckboxProps> = ({
+const Checkbox: React.FC<CheckboxProps> = ({
   label,
   checked,
   className,
@@ -37,3 +37,5 @@ export const Checkbox: React.FC<CheckboxProps> = ({
     </>
   );
 };
+
+export default Checkbox;
