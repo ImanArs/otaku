@@ -26,7 +26,7 @@
       position: absolute;
       top: -60px;
       left: 0;
-      content: '';
+      content: "";
       background-image: url(../../../../public/assets/images/ourShop_top.svg);
       background-size: 100% 100%;
       background-repeat: no-repeat;
@@ -37,7 +37,7 @@
       position: absolute;
       bottom: -60px;
       left: 0;
-      content: '';
+      content: "";
       background-image: url(../../../../public/assets/images/ourShop_bottom.svg);
       background-size: 100% 100%;
       background-repeat: no-repeat;
@@ -63,9 +63,9 @@
         position: absolute;
         top: -1px;
         left: -20px;
-        content: '';
+        content: "";
         z-index: 9;
-        height: 0; 
+        height: 0;
         width: 50px;
         border-bottom: 80px solid #000;
         border-left: 50px solid transparent;
@@ -81,10 +81,12 @@
       h2 {
         font-size: 36px;
         font-weight: 400;
+        color: #fff;
       }
       p {
         font-size: 22px;
         font-weight: 400;
+        color: #fff;
       }
       .actions {
         width: 100%;

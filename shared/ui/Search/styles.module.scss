@@ -6,9 +6,12 @@
   display: flex;
   position: relative;
   margin-left: auto;
+  color: #fff;
 
-  input,button {
+  input,
+  button {
     border: none;
+    color: #fff;
     background: none;
     outline: none;
     padding: 12px 17px 9px 32px;
@@ -20,7 +23,7 @@
   &::before {
     position: absolute;
     left: -5px;
-    content: '';
+    content: "";
     background: #fff;
     width: 2px;
     height: 100%;
@@ -29,7 +32,7 @@
   &::after {
     position: absolute;
     left: 2px;
-    content: '';
+    content: "";
     background: #fff;
     width: 2px;
     height: 100%;
