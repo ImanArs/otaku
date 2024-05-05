@@ -5,6 +5,7 @@
   margin-top: 120px;
   display: flex;
   justify-content: space-between;
+  color: #fff;
 
   .info {
     max-width: 600px;
@@ -32,14 +33,12 @@
           flex-direction: row;
           align-items: center;
           p {
-
           }
           .line {
             width: 100%;
             border-bottom: 3px dashed red;
           }
           span {
-
           }
         }
       }

@@ -1,8 +1,3 @@
-// @font-face {
-//   font-family: "VIVL RAIL";
-//   src: url("../../../../app/fonts/vivl-rail.otf") format("opentype");
-// }
-
 .menu {
   display: flex;
   flex-direction: column;
@@ -15,11 +10,11 @@
   list-style: none;
 
   li {
+    z-index: 9999 !important;
     font-size: 36px;
     font-weight: 400;
     a {
-      font-family: var(--vivl-font) !important; // Provide a fallback font here
-      // font-family: "VIVL RAIL", sans-serif !important; // Provide a fallback font here
+      font-family: var(--vivl-font) !important;
       color: #ffffff;
     }
   }
