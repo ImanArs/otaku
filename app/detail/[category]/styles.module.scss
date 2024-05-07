@@ -32,13 +32,10 @@
           display: flex;
           flex-direction: row;
           align-items: center;
-          p {
-          }
+
           .line {
             width: 100%;
             border-bottom: 3px dashed red;
-          }
-          span {
           }
         }
       }
@@ -57,5 +54,29 @@
   .wrapper {
     display: flex;
     gap: 20px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .detail {
+    display: flex;
+    flex-direction: column;
+    .info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .heading {
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        h2 {
+          font-size: 24px;
+        }
+        button {
+          width: 380px;
+        }
+      }
+    }
   }
 }

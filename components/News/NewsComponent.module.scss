@@ -1,5 +1,4 @@
 .root {
-  background: #000;
   width: 100%;
   .news_wrapper {
     width: 1169px;
@@ -29,7 +28,7 @@
           position: absolute;
           top: -1px;
           left: -40px;
-          content: "";
+          content: '';
           z-index: 4;
           height: 0;
           width: 50px;
@@ -110,7 +109,7 @@
             position: absolute;
             top: -1px;
             left: -40px;
-            content: "";
+            content: '';
             z-index: 4;
             height: 0;
             width: 50px;

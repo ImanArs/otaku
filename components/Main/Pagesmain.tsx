@@ -18,23 +18,17 @@ export default function Pagesmain() {
           <div className={s.qwe_red}>
             <p>...</p>
             <div>
-             
-              <Link href='/catalog'><span>Каталог</span></Link>
+              <Link href="/catalog">
+                <span>Каталог</span>
+              </Link>
               <img src="/assets/images/btn_bg_red.png" alt="logo" />
             </div>
           </div>
           <div className={s.qwe_black}>
-            <img
-              className={s.qwe_black_one}
-              src="/assets/images/button-black.png"
-              alt="logo"
-            />
+            <img className={s.qwe_black_one} src="/assets/images/button-black.png" alt="logo" />
             <div className={s.qwe_black_img}>
               <img src="/assets/icons/FAN SERVICE {LOADED}.svg" alt="logo" />
-              <img
-                src="/assets/icons/BEACH EPISODE PROCESSING....svg"
-                alt="logo"
-              />
+              <img src="/assets/icons/BEACH EPISODE PROCESSING....svg" alt="logo" />
             </div>
           </div>
         </div>
