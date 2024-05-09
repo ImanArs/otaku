@@ -13,6 +13,7 @@
       h2 {
         font-size: 36px;
         font-weight: 900;
+        color: #ffffff;
       }
       button {
         font-size: 32px;
@@ -37,12 +38,14 @@
             border-bottom: 3px dashed red;
           }
           span {
+            color: #ffffff;
           }
         }
       }
     }
   }
 }
+
 .also_look {
   max-width: 2560px;
   width: 86%;
@@ -51,6 +54,7 @@
   h2 {
     font-size: 48px;
     font-family: var(--vivl-font);
+    color: #ffffff;
   }
   .wrapper {
     display: flex;

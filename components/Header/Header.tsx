@@ -23,9 +23,7 @@ export default function Header() {
   return (
     <header className={s.header}>
       <img className={s.header_images} src="/assets/images/Rectangle 43.svg" alt="" />
-      <div className={s.header_menuMob}>
-        <img src="/assets/images/menuMob.png" alt="" />
-      </div>
+
       <div className={s.header_blocks}>
         <Link href="/">
           <img src="/assets/images/logo.svg" alt="logo" />

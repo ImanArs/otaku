@@ -1,7 +1,7 @@
 .bestsellers {
   min-height: 100vh;
   position: relative;
-  
+
   &_wrapper {
     max-width: 1260px;
     width: 100%;
@@ -12,6 +12,8 @@
     position: relative;
     grid-template-columns: repeat(5, 1fr);
     gap: 60px 20px;
+    font-family: 'Blender Pro', sans-serif;
+    color: #ffffff;
   }
   .bestsellers_button {
     max-width: 1260px;

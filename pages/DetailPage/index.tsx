@@ -1,19 +1,17 @@
-import React from "react";
-import ProductVariantCard from "./ui/ProductVariantCard";
-import DetailGallery from "./ui/Gallery";
-import { Button } from "@/shared/ui/Button";
-import s from "@/app/detail/[category]/styles.module.scss";
-import { Metadata } from "next";
-import { getPostById } from "@/hook/usePro";
+import React from 'react';
+import ProductVariantCard from './ui/ProductVariantCard';
+import { Button } from '@/shared/ui/Button';
+import s from '@/app/detail/[category]/styles.module.scss';
+import { Metadata } from 'next';
+import { getPostById } from '@/hook/usePro';
+import DetailGallery from './ui/Gallery';
 type Props = {
   params: {
     id: string;
   };
 };
 
-export async function generateMetadata({
-  params: { id },
-}: Props): Promise<Metadata> {
+export async function generateMetadata({ params: { id } }: Props): Promise<Metadata> {
   const post = await getPostById(id);
 
   return {
