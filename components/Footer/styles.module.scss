@@ -3,13 +3,11 @@
   max-width: 2560px;
   background: #fff;
   position: relative;
-  // padding: 40px 0;
   &:before {
     position: absolute;
     content: '';
     width: 100%;
     height: 50%;
-    background: url(../../public/assets/images/footer_top.svg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     top: -100px;
@@ -20,7 +18,6 @@
     content: '';
     width: 20%;
     height: 10%;
-    background: url(../../public/assets/images/footer_bottom.svg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     bottom: 0;
@@ -32,11 +29,13 @@
     padding: 40px 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     color: #000;
-
     .first {
       .info {
-        letter-spacing: .2px;
+        font-family: 'Blender Pro', sans-serif;
+        text-decoration: underline;
+        letter-spacing: 0.2px;
         text-transform: uppercase;
         font-size: 18px;
         font-weight: 900;
@@ -44,6 +43,40 @@
         display: flex;
         flex-direction: column;
         gap: 15px;
+      }
+      .cardOperations {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .images {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 20px;
+          img {
+            width: 92px;
+          }
+          .masterCard {
+            width: 57px;
+          }
+        }
+        .spans {
+          display: flex;
+          flex-direction: column;
+
+          span {
+            font-family: 'Blender Pro', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+          }
+        }
+        .span2 {
+          font-family: 'Blender Pro', sans-serif;
+          font-size: 16px;
+          font-weight: 500;
+          color: rgba(217, 217, 217, 1);
+        }
       }
     }
 
@@ -71,6 +104,51 @@
             display: flex;
             align-items: center;
             gap: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .footer {
+    width: 430px;
+    padding-top: 20px;
+
+    .footer_wrapper {
+      display: flex;
+      flex-direction: column-reverse;
+      text-align: center;
+      margin: 0 auto;
+      .second {
+        margin-top: 30px;
+      }
+      .first {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        .logo {
+          display: none;
+        }
+        .cardOperations {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+      .third {
+        width: 380px;
+        .info {
+          display: grid;
+          grid-template-columns: repeat(2, 200px);
+          margin: 0 auto;
+          li {
+            width: 175px;
+            background: #0005;
+            color: #fff;
+            padding: 7px 7px;
+            font-size: 18px;
           }
         }
       }

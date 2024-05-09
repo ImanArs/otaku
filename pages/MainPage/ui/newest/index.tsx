@@ -1,14 +1,14 @@
-"use client";
-import React from "react";
-import cls from "./styles.module.scss";
+'use client';
+import React from 'react';
+import cls from './styles.module.scss';
 
-import { Pagination, A11y } from "swiper/modules";
+import { Pagination, A11y } from 'swiper/modules';
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const MainNewest = () => {
   return (
@@ -20,19 +20,12 @@ const MainNewest = () => {
               modules={[Pagination, A11y]}
               slidesPerView={1}
               pagination={{ clickable: true }}
-              className="mySwiperBlack sm"
-            >
+              className="mySwiperBlack sm">
               <SwiperSlide>
-                <img
-                  src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
-                  alt=""
-                />
+                <img src="/assets/images/tokyoGhulOtaku.png" alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img
-                  src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
-                  alt=""
-                />
+                <img src="/assets/images/tokyoGhulOtaku.png" alt="" />
               </SwiperSlide>
             </Swiper>
           </div>
@@ -41,37 +34,21 @@ const MainNewest = () => {
               modules={[Pagination, A11y]}
               slidesPerView={1}
               pagination={{ clickable: true }}
-              className="mySwiperBlack sm"
-            >
+              className="mySwiperBlack sm">
               <SwiperSlide>
-                <img
-                  src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
-                  alt=""
-                />
+                <img src="/assets/images/tokyoGhulOtaku.png" alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img
-                  src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
-                  alt=""
-                />
+                <img src="/assets/images/tokyoGhulOtaku.png" alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img
-                  src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
-                  alt=""
-                />
+                <img src="/assets/images/tokyoGhulOtaku.png" alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img
-                  src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
-                  alt=""
-                />
+                <img src="/assets/images/tokyoGhulOtaku.png" alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img
-                  src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
-                  alt=""
-                />
+                <img src="/assets/images/tokyoGhulOtaku.png" alt="" />
               </SwiperSlide>
             </Swiper>
           </div>
@@ -82,8 +59,7 @@ const MainNewest = () => {
               modules={[Pagination, A11y]}
               slidesPerView={1}
               pagination={{ clickable: true }}
-              className="mySwiperBlack"
-            >
+              className="mySwiperBlack">
               <SwiperSlide>
                 <img
                   src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
@@ -91,10 +67,7 @@ const MainNewest = () => {
                 />
                 <div className={cls.info}>
                   <h2>Lorem, ipsum dolor.</h2>
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Fugit, officia!
-                  </p>
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, officia!</p>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
@@ -104,10 +77,7 @@ const MainNewest = () => {
                 />
                 <div className={cls.info}>
                   <h2>Lorem, ipsum dolor.</h2>
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Fugit, officia!
-                  </p>
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, officia!</p>
                 </div>
               </SwiperSlide>
             </Swiper>
