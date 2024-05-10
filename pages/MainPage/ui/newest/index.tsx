@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { CustomImage } from '@/shared/ui/CustomImage';
 
 
 export const MainNewest = () => {
@@ -23,22 +24,22 @@ export const MainNewest = () => {
               pagination={{ clickable: true }}
               className='mySwiperBlack sm'
               >
-              <SwiperSlide><img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="" /></SwiperSlide>
-              <SwiperSlide><img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="" /></SwiperSlide>
+              {
+                [1, 2, 3, 4, 5, 6].map((card, index) => (
+                  <SwiperSlide key={index}><CustomImage title='lol' description='lol' needInfo src='https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg' /></SwiperSlide>
+                ))
+              }
             </Swiper>
           </div>
           <div className={cls.img}>
+          
             <Swiper
               modules={[Pagination, A11y]}
               slidesPerView={1}
               pagination={{ clickable: true }}
               className='mySwiperBlack sm'
               >
-              <SwiperSlide><img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="" /></SwiperSlide>
-              <SwiperSlide><img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="" /></SwiperSlide>
-              <SwiperSlide><img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="" /></SwiperSlide>
-              <SwiperSlide><img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="" /></SwiperSlide>
-              <SwiperSlide><img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="" /></SwiperSlide>
+              <SwiperSlide><CustomImage title='lol' needInfo src='https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg' /></SwiperSlide>
             </Swiper>
           </div>
         </div>
