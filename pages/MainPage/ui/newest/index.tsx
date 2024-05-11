@@ -1,6 +1,6 @@
-'use client'
-import React from 'react'
-import cls from './styles.module.scss'
+'use client';
+import React from 'react';
+import cls from './styles.module.scss';
 
 import { Pagination, A11y } from 'swiper/modules';
 
@@ -11,8 +11,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { CustomImage } from '@/shared/ui/CustomImage';
 
-
-export const MainNewest = () => {
+const MainNewest = () => {
   return (
     <div className={cls.newest}>
       <div className={cls.newest_wrapper}>
@@ -49,17 +48,22 @@ export const MainNewest = () => {
               modules={[Pagination, A11y]}
               slidesPerView={1}
               pagination={{ clickable: true }}
-              className='mySwiperBlack'
-              >
+              className="mySwiperBlack">
               <SwiperSlide>
-                <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="" />
+                <img
+                  src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+                  alt=""
+                />
                 <div className={cls.info}>
                   <h2>Lorem, ipsum dolor.</h2>
                   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, officia!</p>
                 </div>
               </SwiperSlide>
               <SwiperSlide>
-                <img src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg" alt="" />
+                <img
+                  src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+                  alt=""
+                />
                 <div className={cls.info}>
                   <h2>Lorem, ipsum dolor.</h2>
                   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, officia!</p>
@@ -70,5 +74,6 @@ export const MainNewest = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
+export default MainNewest;

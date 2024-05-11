@@ -6,13 +6,13 @@ import cls from "./styles.module.scss";
 import useProduct from "@/hook/UseProduct";
 import { Search } from "@/shared/ui/Search";
 
-export const MainBestSellers = () => {
+const MainBestSellers = () => {
   const products = useProduct();
 
   return (
     <div className={cls.bestsellers}>
       <div className={cls.top} />
-      <Search />
+      <Search reversed className={cls.search} searchArr={products} />
       <div className={cls.bestsellers_wrapper}>
         {products.map((product, index) => (
           <ProductCard key={index} product={product} />
@@ -24,3 +24,4 @@ export const MainBestSellers = () => {
     </div>
   );
 };
+export default MainBestSellers;

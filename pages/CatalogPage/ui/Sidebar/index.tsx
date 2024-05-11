@@ -1,14 +1,15 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import cls from "./styles.module.scss";
-import { Checkbox } from "../checkbox";
 import useCategory from "@/hook/UseCategory";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Checkbox from "../checkbox";
 
 interface Category {
   id: number;
   name: string;
+  subCategories: SubCategory[];
   codename: string;
 }
 
@@ -17,7 +18,7 @@ interface SubCategory {
   name: string;
   codename: string;
 }
-export const Sidebar = () => {
+const Sidebar = () => {
   const initialAmount = { min: 0, max: 3000 };
 
   const initialCheckedItems: { [key: string]: boolean } = {};
@@ -28,7 +29,7 @@ export const Sidebar = () => {
   useEffect(() => {
     const resetCheckedItems = categories.reduce((acc, category: Category) => {
       acc[category.codename] = false;
-      category.subCategories.forEach((subCategory) => {
+      category.subCategories.forEach((subCategory: SubCategory) => {
         acc[subCategory.codename] = false;
       });
       return acc;
@@ -140,3 +141,4 @@ export const Sidebar = () => {
     </>
   );
 };
+export default Sidebar;

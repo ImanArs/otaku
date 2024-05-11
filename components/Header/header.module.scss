@@ -8,6 +8,12 @@
     max-width: 2560px;
     width: 100%;
   }
+  &_images2 {
+    display: none;
+  }
+  &_menuMob {
+    display: none;
+  }
   &_blocks {
     position: relative;
     padding: 20px 12%;
@@ -15,6 +21,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    &_registr {
+      padding-bottom: 70px;
+      a {
+        font-size: 18px;
+        font-weight: 700;
+        font-family: "Blender Pro", sans-serif;
+        text-decoration: underline;
+      }
+    }
     &_text {
       cursor: pointer;
       display: flex;
@@ -23,6 +38,7 @@
       h3 {
         font-size: 48px;
         color: black;
+        font-family: "Blender Pro", sans-serif;
       }
       .menu {
         top: 125%;
@@ -37,4 +53,37 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+@media screen and (max-width: 430px) {
+  .header {
+    width: 425px;
+    background-image: url(../../public/assets/images/headerMob.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 136px;
+    &_menuMob {
+      display: block;
+      position: relative;
+      img {
+        top: 100px;
+        left: 20px;
+      }
+    }
+    &_images {
+      display: none;
+    }
+    &_blocks {
+      img {
+        padding-top: 10px;
+        padding-left: 60px;
+      }
+      &_registr {
+        display: none;
+      }
+      &_text {
+        display: none;
+      }
+    }
+  }
 }

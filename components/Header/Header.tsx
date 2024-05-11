@@ -1,8 +1,8 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
-import s from "./header.module.scss";
-import { HeaderMenu } from "./ui/menu";
-import Link from "next/link";
+'use client';
+import { useEffect, useRef, useState } from 'react';
+import s from './header.module.scss';
+import { HeaderMenu } from './ui/menu';
+import Link from 'next/link';
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -14,28 +14,24 @@ export default function Header() {
         setOpenMenu(false);
       }
     }
-    document.addEventListener("click", handleClickOutside);
+    document.addEventListener('click', handleClickOutside);
     return () => {
-      document.removeEventListener("click", handleClickOutside);
+      document.removeEventListener('click', handleClickOutside);
     };
   }, [menuRef]);
 
   return (
     <header className={s.header}>
-      <img
-        className={s.header_images}
-        src="/assets/images/Rectangle 43.svg"
-        alt=""
-      />
+      <img className={s.header_images} src="/assets/images/Rectangle 43.svg" alt="" />
+
       <div className={s.header_blocks}>
         <Link href="/">
           <img src="/assets/images/logo.svg" alt="logo" />
         </Link>
-        <div
-          className={s.header_blocks_text}
-          ref={menuRef}
-          onClick={() => setOpenMenu(!openMenu)}
-        >
+        <div className={s.header_blocks_registr}>
+          <Link href="">Войти/зарегестрироваться</Link>
+        </div>
+        <div className={s.header_blocks_text} ref={menuRef} onClick={() => setOpenMenu(!openMenu)}>
           <h3>MENU</h3>
           <div className={s.lini}>
             <img src="/assets/images/lini-menu.svg" alt="logo" />

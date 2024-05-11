@@ -4,8 +4,8 @@ import { Button } from "@/shared/ui/Button";
 import cls from "../../styles.module.scss";
 import { Metadata } from "next";
 import { getPostById } from "@/hook/usePro";
-import { DetailGallery } from "@/pages/DetailPage/ui/Gallery";
-import { ProductVariantCard } from "@/pages/DetailPage/ui/ProductVariantCard";
+import DetailGallery from "@/pages/DetailPage/ui/Gallery";
+import ProductVariantCard from "@/pages/DetailPage/ui/ProductVariantCard";
 import { useSearchParams } from "next/navigation";
 import useProduct from "@/hook/UseProduct";
 import { ProductCard } from "@/shared/ui/ProductCard";
@@ -41,11 +41,13 @@ interface Product {
 const DetailPage: React.FC<Props> = ({ params: { id, category } }: Props) => {
   const [post, setPost] = useState<any>(null);
   const products: Product[] = useProduct();
+  console.log(products);
+
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
 
   useEffect(() => {
     if (category && category !== "detail") {
-      const categoryCodename = category.split("/")[0]; // Get the category codename from the URL
+      const categoryCodename = category.split("/")[0];
       const filtered = products.filter((product) =>
         product.category.codename.includes(categoryCodename)
       );
@@ -67,11 +69,11 @@ const DetailPage: React.FC<Props> = ({ params: { id, category } }: Props) => {
   if (!post) {
     return <div>Loading...</div>;
   }
-
+  // product={products[1]}
   return (
     <main>
       <div className={cls.detail}>
-        <DetailGallery />
+        <DetailGallery product={post} />
         <div className={cls.info}>
           <div className={cls.heading}>
             <h2>{post.title}</h2>

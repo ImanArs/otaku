@@ -65,7 +65,7 @@
         left: -20px;
         content: '';
         z-index: 9;
-        height: 0; 
+        height: 0;
         width: 50px;
         border-bottom: 80px solid #000;
         border-left: 50px solid transparent;
@@ -81,10 +81,14 @@
       h2 {
         font-size: 36px;
         font-weight: 400;
+        color: #fff;
+        font-family: 'Blender Pro', sans-serif;
       }
       p {
         font-size: 22px;
         font-weight: 400;
+        color: #fff;
+        font-family: 'Blender Pro', sans-serif;
       }
       .actions {
         width: 100%;

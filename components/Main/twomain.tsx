@@ -1,4 +1,4 @@
-import s from './twomain.module.scss';
+import s from "./twomain.module.scss";
 
 export default function Twomain() {
   return (
@@ -6,7 +6,7 @@ export default function Twomain() {
       <div className={s.qwe}>
         <img src="/assets/images/linii.png" alt="222" />
       </div>
-      <div className={s.two}>ffff</div>
+      <div className={s.two}></div>
     </>
   );
 }

@@ -29,7 +29,7 @@
           left: -20px;
           content: '';
           z-index: 9;
-          height: 0; 
+          height: 0;
           width: 50px;
           border-bottom: 80px solid #ffffff;
           border-left: 50px solid transparent;
@@ -57,10 +57,14 @@
           h2 {
             font-size: 36px;
             font-weight: 400;
+            color: #ffffff;
+            font-family: 'Blender Pro', sans-serif;
           }
           p {
             font-size: 20px;
             font-weight: 400;
+            color: #ffffff;
+            font-family: 'Blender Pro', sans-serif;
           }
         }
         &:hover {
@@ -83,7 +87,7 @@
           left: -20px;
           content: '';
           z-index: 4;
-          height: 0; 
+          height: 0;
           width: 50px;
           border-bottom: 80px solid #fff;
           border-left: 50px solid transparent;
@@ -92,5 +96,8 @@
         }
       }
     }
-  }  
+  }
+}
+
+@media screen and (max-width: 430px) {
 }

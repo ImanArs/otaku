@@ -1,16 +1,18 @@
 .cart {
-  background: #DD2C40;
+  background: #dd2c40;
   width: 100vw;
   height: 80vh;
   position: fixed;
   z-index: 11;
   bottom: -75%;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   overflow: auto;
   .heading {
     padding: 5px 0;
     text-align: center;
     font-size: 24px;
+    color: #ffffff;
+    font-family: var(--vivl-font);
   }
   .cartContent {
     padding: 60px 0;
@@ -18,24 +20,77 @@
     margin: 0 auto;
     .cartItems {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);  
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       height: 100%;
       overflow: auto;
       align-content: center;
       position: relative;
-      // &::after {
-      //   z-index: 5;
-      //   position: fixed;
-      //   content: '';
-      //   width: 100%;
-      //   height: 100%;
-      //   background: linear-gradient(0deg, #DD2C40, #dd2c4186, #0000 );
-      //   top: 35%;
-      // }
+    }
+    .cartTotal {
+      padding-top: 30px;
+      width: 1200px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      h3 {
+        color: #ffffff;
+        font-family: var(--vivl-font);
+      }
+      p {
+        color: #ffffff;
+        font-family: var(--vivl-font);
+      }
+      button {
+        width: 263px;
+        font-size: 26px;
+        font-family: var(--vivl-font);
+        border: 2px solid #ffffff;
+        background: #000;
+        color: #ffffff;
+        padding: 7px;
+        transition: all ease-in-out 0.3s;
+        &:hover {
+          background: #ffffff;
+          color: #000;
+          /* Добавьте здесь любые изменения, которые хотите видеть при наведении */
+        }
+      }
     }
   }
-}         
+}
 .openCart {
   bottom: 0;
+}
+
+@media screen and (max-width: 431px) {
+  .cart {
+    max-width: 430px;
+    .heading {
+      width: 430px;
+      font-size: 24px;
+      font-weight: 400;
+    }
+    .cartContent {
+      width: 410px;
+      margin: 0 auto;
+      .cartItems {
+        width: 400px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 25px;
+      }
+      .cartTotal {
+        margin: 0 auto;
+        width: 375px;
+        button {
+          width: 200px;
+        }
+      }
+    }
+  }
+  .openCart {
+    width: 430px;
+  }
 }
