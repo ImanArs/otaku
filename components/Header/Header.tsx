@@ -26,10 +26,16 @@ export default function Header() {
 
       <div className={s.header_blocks}>
         <Link href="/">
-          <img src="/assets/images/logo.svg" alt="logo" />
+          <img className={s.logo} src="/assets/images/logo.svg" alt="logo" />
         </Link>
         <div className={s.header_blocks_registr}>
           <Link href="">Войти/зарегестрироваться</Link>
+          <img
+            className={s.menuMob}
+            onClick={() => setOpenMenu(!openMenu)}
+            src="assets/images/menuMob.png"
+            alt=""
+          />
         </div>
         <div className={s.header_blocks_text} ref={menuRef} onClick={() => setOpenMenu(!openMenu)}>
           <h3>MENU</h3>

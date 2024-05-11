@@ -106,3 +106,32 @@
 .mySwiper {
   height: 400px;
 }
+
+@media screen and (max-width: 600px) {
+  .ourStore {
+    width: 100%;
+    margin: 0 auto;
+    &_header {
+      width: 100%;
+    }
+    &__footer {
+      width: 425px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 60px;
+      .img {
+        width: 410px;
+      }
+      .info {
+        width: 420px;
+        .actions {
+          width: 380px;
+          button {
+            width: 180px;
+          }
+        }
+      }
+    }
+  }
+}
