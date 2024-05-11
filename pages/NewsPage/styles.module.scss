@@ -37,11 +37,13 @@
             font-size: 36px;
             font-weight: 400;
             color: #ffffff;
+            font-family: 'Blender Pro', sans-serif;
           }
           p {
             font-size: 20px;
             font-weight: 400;
             color: #ffffff;
+            font-family: 'Blender Pro', sans-serif;
           }
         }
         .img {
@@ -77,10 +79,11 @@
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 600px) {
   .root {
     margin: 0 auto;
-    max-width: 420px;
+    max-width: 100%;
+    width: 100%;
     h1 {
       width: 255px;
       padding-left: 60px;
