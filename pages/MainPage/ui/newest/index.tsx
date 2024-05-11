@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { CustomImage } from '@/shared/ui/CustomImage/CustomImage';
 
 const MainNewest = () => {
   return (
@@ -22,10 +23,10 @@ const MainNewest = () => {
               pagination={{ clickable: true }}
               className="mySwiperBlack sm">
               <SwiperSlide>
-                <img src="/assets/images/tokyoGhulOtaku.png" alt="" />
+                <CustomImage className={cls.image} color='white' src="/assets/images/tokyoGhulOtaku.png" alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img src="/assets/images/tokyoGhulOtaku.png" alt="" />
+                <CustomImage className={cls.image} color='white' src="/assets/images/tokyoGhulOtaku.png" alt="" />
               </SwiperSlide>
             </Swiper>
           </div>
@@ -36,19 +37,13 @@ const MainNewest = () => {
               pagination={{ clickable: true }}
               className="mySwiperBlack sm">
               <SwiperSlide>
-                <img src="/assets/images/tokyoGhulOtaku.png" alt="" />
+                <CustomImage className={cls.image} color='white' src="/assets/images/tokyoGhulOtaku.png" alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img src="/assets/images/tokyoGhulOtaku.png" alt="" />
+                <CustomImage className={cls.image} color='white' src="/assets/images/tokyoGhulOtaku.png" alt="" />
               </SwiperSlide>
               <SwiperSlide>
-                <img src="/assets/images/tokyoGhulOtaku.png" alt="" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/assets/images/tokyoGhulOtaku.png" alt="" />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img src="/assets/images/tokyoGhulOtaku.png" alt="" />
+                <CustomImage className={cls.image} color='white' src="/assets/images/tokyoGhulOtaku.png" alt="" />
               </SwiperSlide>
             </Swiper>
           </div>
@@ -61,24 +56,20 @@ const MainNewest = () => {
               pagination={{ clickable: true }}
               className="mySwiperBlack">
               <SwiperSlide>
-                <img
-                  src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
-                  alt=""
-                />
-                <div className={cls.info}>
-                  <h2>Lorem, ipsum dolor.</h2>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, officia!</p>
-                </div>
+                <CustomImage className={cls.image} color='white' src="/assets/images/tokyoGhulOtaku.png" alt="">
+                  <div>
+                    <h2>Lorem, ipsum dolor.</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, officia!</p>
+                  </div>
+                </CustomImage>
               </SwiperSlide>
               <SwiperSlide>
-                <img
-                  src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
-                  alt=""
-                />
-                <div className={cls.info}>
-                  <h2>Lorem, ipsum dolor.</h2>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, officia!</p>
-                </div>
+                <CustomImage className={cls.image} color='white' src="/assets/images/tokyoGhulOtaku.png" alt="">
+                  <div>
+                    <h2>Lorem, ipsum dolor.</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, officia!</p>
+                  </div>
+                </CustomImage>
               </SwiperSlide>
             </Swiper>
           </div>
