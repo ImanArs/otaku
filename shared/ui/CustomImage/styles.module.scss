@@ -1,5 +1,6 @@
 .img {
   overflow: hidden;
+
   height: 370px;
   width: 100%;
   background: #d9d9d9;
@@ -24,6 +25,7 @@
       font-weight: 400;
       color: #ffffff;
       font-family: 'Blender Pro', sans-serif;
+
     }
   }
   &:hover {
@@ -66,4 +68,5 @@
   border-left: 50px solid transparent;
   border-right: 0px solid transparent;
   transform: rotate(180deg);
+
 }

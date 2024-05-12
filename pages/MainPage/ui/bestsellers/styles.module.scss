@@ -46,3 +46,22 @@
     transform: rotate(25deg);
   }
 }
+
+@media screen and (max-width: 600px) {
+  .bestsellers {
+    width: 100%;
+    margin: 0 auto;
+    &_wrapper {
+      padding-top: 40px;
+      margin: 0 auto;
+      width: 400px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .button_wrap {
+      margin: 0 auto;
+      padding-top: 30px;
+      width: 260px;
+    }
+  }
+}

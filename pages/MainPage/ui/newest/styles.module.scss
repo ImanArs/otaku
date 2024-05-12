@@ -41,5 +41,20 @@
   }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 600px) {
+  .newest {
+    width: 100%;
+    &_wrapper {
+      display: flex;
+      flex-direction: column;
+      .left {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+      }
+      .right {
+        margin-top: 80px;
+      }
+    }
+  }
 }

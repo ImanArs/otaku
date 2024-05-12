@@ -31,6 +31,7 @@ const MainNewest = () => {
             </Swiper>
           </div>
           <div className={cls.img}>
+          
             <Swiper
               modules={[Pagination, A11y]}
               slidesPerView={1}

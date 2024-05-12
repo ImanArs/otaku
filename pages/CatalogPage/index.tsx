@@ -1,10 +1,10 @@
-"use client";
-import React, { useState, useEffect } from "react";
-import cls from "./styles.module.scss";
-import useProduct from "@/hook/UseProduct";
-import Sidebar from "./ui/Sidebar";
-import { Search } from "@/shared/ui/Search";
-import { ProductCard } from "@/shared/ui/ProductCard";
+'use client';
+import React, { useState, useEffect } from 'react';
+import cls from './styles.module.scss';
+import useProduct from '@/hook/UseProduct';
+import Sidebar from './ui/Sidebar';
+import { Search } from '@/shared/ui/Search';
+import { ProductCard } from '@/shared/ui/ProductCard';
 // import { useRouter } from "next/navigation";
 
 interface Product {
@@ -29,18 +29,17 @@ interface Product {
 }
 
 const CatalogPage: React.FC = () => {
-  const pathSegments = window.location.pathname.split("/");
+  const pathSegments = window.location.pathname.split('/');
   const categoryCodename = pathSegments[pathSegments.length - 1];
   const products: Product[] = useProduct();
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
 
   useEffect(() => {
-    if (categoryCodename && categoryCodename !== "catalog") {
+    if (categoryCodename && categoryCodename !== 'catalog') {
       const filtered = products.filter(
         (product) =>
           product.category.codename === categoryCodename ||
-          (product.sub_category &&
-            product.sub_category.codename === categoryCodename)
+          (product.sub_category && product.sub_category.codename === categoryCodename),
       );
       setFilteredProducts(filtered);
     } else {
