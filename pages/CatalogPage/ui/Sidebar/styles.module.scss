@@ -10,6 +10,8 @@
   gap: 20px;
   z-index: 999;
   background-position-x: center;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
 
   &_amountWrapper {
     display: flex;
@@ -104,4 +106,26 @@
   }
   z-index: -1;
   position: absolute;
+}
+.open {
+  transform: translateX(0);
+}
+@media screen and (min-width: 768px) {
+  .buttonopen{
+    display: none;
+  }
+
+  .toggleButton {
+    display: none; // Скрываем кнопку на планшетах и компьютерах
+  }
+
+  .sidebar {
+    transform: none; // Отключаем трансформацию на планшетах и компьютерах
+    transition: none; // Отключаем анимацию на планшетах и компьютерах
+  }
+}
+@media screen and (max-width: 768px) {
+ .sidebar{
+  position: fixed;
+ }
 }

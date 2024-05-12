@@ -3,9 +3,13 @@ import { useEffect, useRef, useState } from 'react';
 import s from './header.module.scss';
 import { HeaderMenu } from './ui/menu';
 import Link from 'next/link';
+import Login from '../auth/Login';
+import Register from '../auth/Register';
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showRegisterModal, setShowRegisterModal] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -29,7 +33,8 @@ export default function Header() {
           <img src="/assets/images/logo.svg" alt="logo" />
         </Link>
         <div className={s.header_blocks_registr}>
-          <Link href="">Войти/зарегестрироваться</Link>
+          <span onClick={() => setShowLoginModal(true)}>Войти</span>/
+          <span onClick={() => setShowRegisterModal(true)}>Зарегистрироваться</span>
         </div>
         <div className={s.header_blocks_text} ref={menuRef} onClick={() => setOpenMenu(!openMenu)}>
           <h3>MENU</h3>
@@ -38,11 +43,13 @@ export default function Header() {
             <img src="/assets/images/lini-menu.svg" alt="logo" />
             <img src="/assets/images/lini-menu.svg" alt="logo" />
           </div>
-          {openMenu && (
+          {/* {openMenu && (
             <div className={s.menu}>
               <HeaderMenu />
             </div>
-          )}
+          )} */}
+          {showLoginModal && <Login showModal={showLoginModal} setShowModal={setShowLoginModal} />}
+          {showRegisterModal && <Register showModal={showRegisterModal} setShowModal={setShowRegisterModal} />}
         </div>
       </div>
     </header>

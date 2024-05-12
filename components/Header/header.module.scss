@@ -54,8 +54,13 @@
   flex-direction: column;
   gap: 5px;
 }
+.header_blocks_registr{
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+}
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 600px) {
   .header {
     width: 425px;
     background-image: url(../../public/assets/images/headerMob.png);

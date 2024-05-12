@@ -59,3 +59,9 @@
     display: block;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .search_reversed {
+    // margin-top: 50px;
+  }
+}

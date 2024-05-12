@@ -5,7 +5,6 @@ import useProduct from "@/hook/UseProduct";
 import Sidebar from "./ui/Sidebar";
 import { Search } from "@/shared/ui/Search";
 import { ProductCard } from "@/shared/ui/ProductCard";
-// import { useRouter } from "next/navigation";
 
 interface Product {
   id: number;
