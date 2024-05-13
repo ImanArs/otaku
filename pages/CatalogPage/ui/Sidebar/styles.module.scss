@@ -7,9 +7,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   gap: 20px;
   z-index: 999;
   background-position-x: center;
+  transform: translateY(-200%);
+  transition: transform 0.3s ease;
 
   &_amountWrapper {
     display: flex;
@@ -89,9 +92,6 @@
 .input1 {
   width: 120px;
   height: 50px;
-
-  img {
-  }
   z-index: -1;
   position: absolute;
 }
@@ -99,9 +99,29 @@
   width: 120px;
   height: 50px;
   margin-left: 10px;
-
-  img {
-  }
   z-index: -1;
   position: absolute;
+}
+.open {
+  transform: translateY(0);
+}
+@media screen and (min-width: 768px) {
+  .buttonopen{
+    display: none;
+  }
+
+  .toggleButton {
+    display: none;
+  }
+
+  .sidebar {
+    transform: none; 
+    transition: none; 
+  }
+}
+@media screen and (max-width: 768px) {
+ .sidebar{
+  background: #000;
+  position: fixed;
+ }
 }

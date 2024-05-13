@@ -24,6 +24,7 @@ const useAuthentication = () => {
       const { access } = data;
       document.cookie = `access=${access}; path=/`;
       window.location.reload();
+      
 
     } catch (error) {
       setError('Failed to log in');

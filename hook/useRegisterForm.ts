@@ -1,4 +1,3 @@
-// import Router from 'next/router';
 import { useState } from 'react';
 
 interface FormData {
@@ -53,14 +52,19 @@ const useRegisterForm = () => {
 
       const data = await response.json();
 
-      const { accesstoken } = data;
-      console.log(data);
-      console.log(accesstoken);
-      
-      
+      const { access } = data;
 
-      document.cookie = `token=${accesstoken}; path=/`;
+      document.cookie = `access=${access}; path=/`;
 
+      // Здесь сохраняем полученный id, если он есть в ответе сервера
+      if (data.id !== undefined) {
+        setFormData(prevState => ({
+          ...prevState,
+          id: data.id
+        }));
+      }
+
+      // Сброс значений формы после успешной отправки
       setFormData({
         id: 0,
         first_name: '',

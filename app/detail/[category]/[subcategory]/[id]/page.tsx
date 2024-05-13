@@ -19,7 +19,7 @@ type Props = {
 
 interface Product {
   id: number;
-  images: string[] | null;
+  images: { id: number; image: string }[] | null;
   category: {
     id: number;
     name: string;
@@ -69,7 +69,6 @@ const DetailPage: React.FC<Props> = ({ params: { id, category } }: Props) => {
   if (!post) {
     return <div>Loading...</div>;
   }
-  // product={products[1]}
   return (
     <main>
       <div className={cls.detail}>
@@ -81,9 +80,9 @@ const DetailPage: React.FC<Props> = ({ params: { id, category } }: Props) => {
             <Button type="red">Добавить в корзину</Button>
           </div>
           <div className={cls.variants}>
-            {[1, 2, 3, 4, 5, 6].map((card, index) => (
+            {/* {[1, 2, 3, 4, 5, 6].map((card, index) => (
               <ProductVariantCard key={index} />
-            ))}
+            ))} */}
           </div>
           <div className={cls.options}>
             <ul>

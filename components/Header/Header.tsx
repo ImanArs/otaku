@@ -3,10 +3,26 @@ import { useEffect, useRef, useState } from 'react';
 import s from './header.module.scss';
 import { HeaderMenu } from './ui/menu';
 import Link from 'next/link';
+import Login from '../auth/Login';
+import Register from '../auth/Register';
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showRegisterModal, setShowRegisterModal] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+
+  const getCookie = (name: string) => {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop()?.split(';').shift();
+  };
+
+  useEffect(() => {
+    const token = getCookie('access');
+    setIsAuthenticated(!!token);
+  }, []);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -28,15 +44,12 @@ export default function Header() {
         <Link href="/">
           <img className={s.logo} src="/assets/images/logo.svg" alt="logo" />
         </Link>
-        <div className={s.header_blocks_registr}>
-          <Link href="">Войти/зарегестрироваться</Link>
-          <img
-            className={s.menuMob}
-            onClick={() => setOpenMenu(!openMenu)}
-            src="assets/images/menuMob.png"
-            alt=""
-          />
-        </div>
+        {isAuthenticated ? null : (
+          <div className={s.header_blocks_registr}>
+            <span onClick={() => setShowLoginModal(true)}>Войти</span>/
+            <span onClick={() => setShowRegisterModal(true)}>Зарегистрироваться</span>
+          </div>
+        )}
         <div className={s.header_blocks_text} ref={menuRef} onClick={() => setOpenMenu(!openMenu)}>
           <h3>MENU</h3>
           <div className={s.lini}>
@@ -49,6 +62,8 @@ export default function Header() {
               <HeaderMenu />
             </div>
           )}
+          {showLoginModal && <Login showModal={showLoginModal} setShowModal={setShowLoginModal} />}
+          {showRegisterModal && <Register showModal={showRegisterModal} setShowModal={setShowRegisterModal} />}
         </div>
       </div>
     </header>

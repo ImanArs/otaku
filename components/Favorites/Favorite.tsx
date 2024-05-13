@@ -50,6 +50,7 @@ const Favorites: React.FC = () => {
           <h5>Чтобы добавлять товары в раздел “избранное” необходимо иметь учётную запись</h5>
         </div>
       )}
+       {/* <Favoritecards /> */}
       {showModal && <Login showModal={showModal} setShowModal={setShowModal} />}
     </div>
   );
