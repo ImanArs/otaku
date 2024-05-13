@@ -1,10 +1,10 @@
-"use client";
-import React from "react";
-import cls from "./styles.module.scss";
-import HeartIcons from "@/public/assets/icons/heart_white.svg";
-import classNames from "classnames";
-import { Label } from "../Label";
-import Link from "next/link";
+'use client';
+import React, { useState } from 'react';
+import cls from './styles.module.scss';
+import HeartIcons from '@/public/assets/icons/heart_white.svg';
+import classNames from 'classnames';
+import { Label } from '../Label';
+import Link from 'next/link';
 
 interface Product {
   id: number;
@@ -13,9 +13,13 @@ interface Product {
   description: string;
   category: { codename: string };
   subcategory?: { codename: string };
+  images: { id: number; image: string }[] | null;
 }
+const baseURL = "http://13.60.49.147:8000/";
+
 
 export const ProductCard = ({ product }: { product: Product }) => {
+  const [selectedPicture, setSelectedPicture] = useState(0);
   const isFavourite = Math.random() > 0.5;
   const quantity = false;
   const sale = false;
@@ -23,15 +27,15 @@ export const ProductCard = ({ product }: { product: Product }) => {
   const categoryCodename = product.category.codename;
   const productName = product.title;
 
-  const subcategoryCodename = product.subcategory
-    ? product.subcategory.codename
-    : productName;
+  const subcategoryCodename = product.subcategory ? product.subcategory.codename : productName;
+
+  if (!product?.images || product.images.length === 0) {
+    return <div className={cls.gallery}>No images available. {product.title}</div>;
+  }
 
   return (
     <div className={cls.card}>
-      <Link
-        href={`/detail/${categoryCodename}/${subcategoryCodename}/${product.id}`}
-      >
+      <Link href={`/detail/${categoryCodename}/${subcategoryCodename}/${product.id}`}>
         {sale && (
           <Label type="red" className={cls.card_label}>
             скидка -15%
@@ -43,15 +47,18 @@ export const ProductCard = ({ product }: { product: Product }) => {
           </Label>
         )}
         <div className={cls.card_img}>
+        <img
+          src={`${baseURL}${product.images[selectedPicture].image}`}
+          alt={`Selected Product Image ${selectedPicture + 1}`}
+        />
           <button
             className={classNames(
-              "",
+              '',
               {
                 [cls.active_heart]: isFavourite,
               },
-              [cls.heart]
-            )}
-          >
+              [cls.heart],
+            )}>
             <HeartIcons />
           </button>
           <div className={cls.triangle_wrapper}>
@@ -69,12 +76,10 @@ export const ProductCard = ({ product }: { product: Product }) => {
         </div>
       </Link>
       <div className={cls.card_actions}>
-        <button onClick={() => console.log("купить")}>купить</button>
-        <button onClick={() => console.log("смотреть")}>
-          {" "}
-          <Link
-            href={`/detail/${categoryCodename}/${subcategoryCodename}/${product.id}`}
-          >
+        <button onClick={() => console.log('купить')}>купить</button>
+        <button onClick={() => console.log('смотреть')}>
+          {' '}
+          <Link href={`/detail/${categoryCodename}/${subcategoryCodename}/${product.id}`}>
             Смотреть
           </Link>
         </button>

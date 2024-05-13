@@ -5,6 +5,7 @@ import MainBestSellers from "./ui/bestsellers";
 import OurStore from "./ui/ourStore";
 import cls from "./styles.module.scss";
 import MainNewest from "./ui/newest";
+import { CustomImage } from "@/shared/ui/CustomImage/CustomImage";
 
 const MainPage = () => {
   return (

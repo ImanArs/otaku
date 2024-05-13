@@ -4,7 +4,7 @@ import useCategory from "@/hook/UseCategory";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Checkbox from "../checkbox";
-
+import Icons from "@/public/assets/images/filtercatolog.png"
 interface Category {
   id: number;
   name: string;
@@ -68,7 +68,7 @@ const Sidebar = () => {
   return (
     <>
       {/* Кнопка для открытия/закрытия боковой панели */}
-      <button className={cls.buttonopen} onClick={toggleSidebar}>Toggle Sidebar</button>
+      <button className={cls.buttonopen} onClick={toggleSidebar}>Фильтр</button>
 
       {/* Содержимое боковой панели */}
       <aside className={`${cls.sidebar} ${isOpen ? cls.open : ""}`}>

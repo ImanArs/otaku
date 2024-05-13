@@ -94,6 +94,8 @@
 
 @media screen and (max-width: 600px) {
   .about {
+    width: 100%;
+    margin: 0 auto;
     h1 {
       font-size: 32px;
       text-align: center;
@@ -107,9 +109,9 @@
       flex-direction: column-reverse;
       align-items: center;
       gap: 50px;
-      width: 284px;
+      width: 300px;
       &_text {
-        width: 284px;
+        width: 400px;
         font-size: 16px;
         text-align: center;
       }
@@ -125,6 +127,13 @@
       }
       button {
         display: none;
+      }
+    }
+    &_thee {
+      width: 442px;
+      text-align: center;
+      h1 {
+        width: 300px;
       }
     }
   }

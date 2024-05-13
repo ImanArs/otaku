@@ -8,6 +8,7 @@
       color: #ffffff;
       text-decoration: underline;
       font-size: 18px;
+      font-family: 'Blender Pro', sans-serif;
       font-weight: 300;
     }
     .share {
@@ -82,7 +83,6 @@
       }
     }
     .other_news {
-      padding-bottom: 100px;
       padding-top: 60px;
 
       h1 {
@@ -144,9 +144,10 @@
   }
 }
 
-@media screen and (max-width: 431px) {
+@media screen and (max-width: 600px) {
   .root {
-    max-width: 420px;
+    max-width: 100%;
+    width: 100%;
     .news_wrapper {
       width: 375px;
       padding-top: 40px;

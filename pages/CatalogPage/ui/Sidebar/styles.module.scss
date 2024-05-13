@@ -7,10 +7,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   gap: 20px;
   z-index: 999;
   background-position-x: center;
-  transform: translateX(-100%);
+  transform: translateY(-200%);
   transition: transform 0.3s ease;
 
   &_amountWrapper {
@@ -91,9 +92,6 @@
 .input1 {
   width: 120px;
   height: 50px;
-
-  img {
-  }
   z-index: -1;
   position: absolute;
 }
@@ -101,14 +99,11 @@
   width: 120px;
   height: 50px;
   margin-left: 10px;
-
-  img {
-  }
   z-index: -1;
   position: absolute;
 }
 .open {
-  transform: translateX(0);
+  transform: translateY(0);
 }
 @media screen and (min-width: 768px) {
   .buttonopen{
@@ -116,16 +111,17 @@
   }
 
   .toggleButton {
-    display: none; // Скрываем кнопку на планшетах и компьютерах
+    display: none;
   }
 
   .sidebar {
-    transform: none; // Отключаем трансформацию на планшетах и компьютерах
-    transition: none; // Отключаем анимацию на планшетах и компьютерах
+    transform: none; 
+    transition: none; 
   }
 }
 @media screen and (max-width: 768px) {
  .sidebar{
+  background: #000;
   position: fixed;
  }
 }

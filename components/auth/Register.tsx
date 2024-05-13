@@ -25,7 +25,6 @@ import Login from './Login';
   };
 
   const handleRegistrationSuccess = () => {
-    // Redirect to Login modal after successful registration
     setRedirectToLogin(true);
   };
   return (

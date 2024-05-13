@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import cls from "./styles.module.scss";
 
-const baseURL = "http://13.60.49.147:8000/api/media/product_imag";
+const baseURL = "http://13.60.49.147:8000/";
 
 interface Product {
   id: number;
