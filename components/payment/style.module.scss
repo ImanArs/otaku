@@ -50,7 +50,7 @@
     }
     .payment_cards {
       padding-top: 50px;
-      padding-left: 240px;
+      padding-left: 290px;
       width: 696px;
       margin: 0 auto;
       .h2 {
@@ -76,7 +76,6 @@
       }
       .imagesCard {
         padding-top: 50px;
-        padding-left: 70px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -135,6 +134,64 @@
           width: 20px;
           height: 20px;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .root {
+    width: 100%;
+    .payment_wrapper {
+      width: 430px;
+      .rules {
+        width: 430px;
+        ul {
+          width: 430px;
+          li {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    .payment_by_card {
+      padding-top: 20px;
+      background: #ffffff;
+      height: 500px;
+
+      h1 {
+        padding-left: 50px;
+      }
+      .payment_cards {
+        margin-top: 20px;
+        width: 430px;
+        padding: 0;
+        .h2 {
+          width: 430px;
+        }
+        ul {
+          width: 430px;
+          li {
+            font-size: 18px;
+          }
+        }
+      }
+      .imagesCard {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 25px;
+        img {
+          width: 120px;
+        }
+      }
+    }
+    .instructions {
+      width: 430px;
+      .buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-bottom: 0;
       }
     }
   }
