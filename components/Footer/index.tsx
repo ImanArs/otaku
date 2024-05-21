@@ -33,6 +33,7 @@ export const Footer = () => {
   return (
     <footer className={cls.footer}>
       <div className={cls.footer_wrapper}>
+        <div className={cls.top} />
         <div className={cls.first}>
           <div className={cls.logo}>
             <Logo />
