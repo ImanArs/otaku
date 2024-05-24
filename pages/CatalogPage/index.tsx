@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import cls from "./styles.module.scss";
 import useProduct from "@/hook/UseProduct";
 import Sidebar from "./ui/Sidebar";
@@ -30,10 +30,8 @@ interface Product {
 const CatalogPage: React.FC = () => {
   const [categoryCodename, setCategoryCodename] = useState<string | null>(null);
   const products: Product[] = useProduct();
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
 
   useEffect(() => {
-    // Access window only on the client-side
     if (typeof window !== "undefined") {
       const pathSegments = window.location.pathname.split('/');
       const codename = pathSegments[pathSegments.length - 1];
@@ -41,33 +39,37 @@ const CatalogPage: React.FC = () => {
     }
   }, []);
 
-  useEffect(() => {
-    if (categoryCodename && categoryCodename !== 'catalog') {
-      const filtered = products.filter(
-        (product) =>
-          product.category.codename === categoryCodename ||
-          (product.sub_category && product.sub_category.codename === categoryCodename),
-      );
-      setFilteredProducts(filtered);
-    } else {
-      setFilteredProducts(products);
-    }
-  }, [categoryCodename, products]);
+  const filterProducts = useCallback((product: Product) => {
+    return product.category.codename === categoryCodename ||
+      (product.sub_category && product.sub_category.codename === categoryCodename);
+  }, [categoryCodename]);
+
+  const filteredProducts = useMemo(() => {
+    return categoryCodename && categoryCodename !== 'catalog' ? products.filter(filterProducts) : products;
+  }, [categoryCodename, products, filterProducts]);
 
   return (
-    <div className={cls.catalogPage}>
-      <div className={cls.sidebar}>
-        <Sidebar />
+    <main className={cls.catalogPage}>
+      {/* <div className={cls.sidebarBlock}>lol</div> */}
+      <div className={cls.sidebarBlock}>
+      <Sidebar />
       </div>
       <div className={cls.catalogContent}>
         <Search reversed className={cls.search} searchArr={products} />
         <div className={cls.cards}>
-          {filteredProducts.map((product, index) => (
-            <ProductCard key={index} product={product} />
+          {filteredProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
+        {
+          filteredProducts.length === 0 && (
+            <div className={cls.noProducts}>
+              <h2>Нет товаров</h2>
+            </div>
+          )
+        }
       </div>
-    </div>
+    </main>
   );
 };
 export default CatalogPage;

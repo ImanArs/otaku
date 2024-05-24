@@ -12,6 +12,8 @@ const useProduct = () => {
           throw new Error('Failed to fetch products');
         }
         const data = await response.json();
+        console.log(data);
+        
         // console.log(data.results);
         setProducts(data.results);
       } catch (error) {

@@ -18,7 +18,7 @@ const DetailGallery = ({ product }: { product: Product }) => {
   return (
     <div className={cls.gallery}>
       <div className={cls.gallery_list}>
-        {product.images.map((img, index) => (
+        {product.images.slice(0,5).map((img, index) => (
           <div
             key={index}
             className={cls.img}

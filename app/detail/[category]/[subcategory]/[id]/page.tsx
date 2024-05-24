@@ -41,7 +41,6 @@ interface Product {
 const DetailPage: React.FC<Props> = ({ params: { id, category } }: Props) => {
   const [post, setPost] = useState<any>(null);
   const products: Product[] = useProduct();
-  console.log(products);
 
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(products);
 

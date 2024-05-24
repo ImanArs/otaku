@@ -17,6 +17,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.51.3",
     "react-router-dom": "^6.23.0",
+    "react-slider": "^2.0.6",
     "sass": "^1.72.0",
     "swiper": "^11.1.1"
   },

@@ -22,7 +22,7 @@ export const Search: React.FC<SearchProps> = ({ reversed, className, searchArr }
   );
 
   const toggleSearch = () => {
-    setOpenSearch(!openSearch); 
+    // setOpenSearch(!openSearch); 
     setSearchTerm(''); 
   };
 
@@ -32,9 +32,9 @@ export const Search: React.FC<SearchProps> = ({ reversed, className, searchArr }
         [cls.search_reversed]: reversed
       }, [cls.search, className])}>
         <button onClick={toggleSearch}>
-          {openSearch ? 'Закрыть поиск' : 'Поиск в каталоге'}
+          Поиск в каталоге
         </button>
-        {openSearch && ( 
+        {true && ( 
           <>
             <input 
               type="text" 

@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import cls from './styles.module.scss';
 import classNames from 'classnames';
 import { Card } from './ui/Card';
@@ -22,6 +22,7 @@ const mockData = [
 export const CartWidget = () => {
   const [openCart, setOpenCart] = React.useState(false);
   const [openCheckout, setOpenCheckout] = React.useState(false);
+  const cartRef = useRef(null);
 
   const handleClick = () => {
     setOpenCart(!openCart);
@@ -30,18 +31,32 @@ export const CartWidget = () => {
   const handleOpenCheckout = () => {
     setOpenCheckout(!openCheckout);
   };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (cartRef.current && (cartRef.current as HTMLElement).contains(event.target as Node)) {
+      setOpenCart(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [cartRef]);
+
   return (
     <>
       <div
+        ref={cartRef}
         className={classNames(
           '',
           {
             [cls.openCart]: openCart,
           },
           [cls.cart],
-        )}
-        onClick={handleClick}>
-        <div className={cls.heading}>Корзина</div>
+        )}>
+        <div className={cls.heading} onClick={handleClick}>Корзина</div>
         <div className={cls.cartContent}>
           <div className={cls.cartItems}>
             {mockData.map((item, i) => (

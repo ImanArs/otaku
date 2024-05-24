@@ -34,11 +34,11 @@
         li {
           display: flex;
           flex-direction: row;
-          align-items: center;
-
+          align-items: center;;
           .line {
+            margin: 0 10px;
             width: 100%;
-            border-bottom: 3px dashed red;
+            border-bottom: 4px dotted #DD2C40;
           }
         }
       }

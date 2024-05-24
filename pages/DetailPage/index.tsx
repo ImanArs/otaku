@@ -70,7 +70,7 @@ export default function DetailPage({ params }: Props) {
                 <li key={index}>
                   <p>lol</p>
                   <div className={s.line} />
-                  <span>значение</span>
+                  <span>значениеsas</span>
                 </li>
               ))}
             </ul>

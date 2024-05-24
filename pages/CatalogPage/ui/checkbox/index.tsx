@@ -1,40 +1,29 @@
 import classNames from "classnames";
 import React from "react";
 import cls from "./styles.module.scss";
-import Link from "next/link";
 
 interface CheckboxProps {
   label?: string | React.ReactNode;
-  checked: boolean;
+  checked?: boolean;
   className?: string;
-  codenamesub?: string;
-  codename: string;
-  onChange: (id: string, checked: boolean) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Checkbox: React.FC<CheckboxProps> = ({
   label,
   checked,
   className,
-  codename,
-  codenamesub,
-  onChange,
+  ...rest
 }) => {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(codename, e.target.checked);
-  };
-  const linkHref = codenamesub
-    ? `/catalog/${codename}/${codenamesub}`
-    : `/catalog/${codename}`;
   return (
-    <>
-      <Link href={linkHref}>
-        <label className={classNames("", {}, [cls.checkbox, className])}>
-          <input type="checkbox" checked={checked} onChange={handleChange} />
-          <span className={cls.checkmark}>{label}</span>
-        </label>
-      </Link>
-    </>
+    <label className={classNames("", {}, [cls.checkbox, className])}>
+      <input 
+        type="checkbox" 
+        checked={checked} 
+        {...rest}
+        />
+      <span className={cls.checkmark}>{label}</span>
+    </label>
   );
 };
 
