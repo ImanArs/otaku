@@ -34,6 +34,7 @@ const Sidebar = ({className}: {className?: string;}) => {
   return (
     <>
       <button className={classNames([cls.buttonopen, className])} onClick={() => setIsOpen(!isOpen)}>Фильтр</button>
+
       <aside className={`${cls.sidebar} ${isOpen ? cls.open : ""}`}>
         <div className={cls.sidebar_amountWrapper}>
           <div className={cls.amount}>

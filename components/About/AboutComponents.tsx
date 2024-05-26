@@ -87,7 +87,6 @@ export default function AboutComponents() {
             могли наслаждаться истинным качеством и долговечностью.
           </p>
           <Button type="red">
-            {' '}
             <Link href="/catalog">КАТАЛОГ</Link>
           </Button>
         </div>

@@ -1,25 +1,15 @@
 'use client';
 import React from 'react';
-import classNames from 'classnames';
 import cls from './style.module.scss';
 
-interface CheckoutProps {
-  active: boolean;
-  handleClick: () => void;
+interface Props {
+  closeCart: () => void
 }
 
-const CloseCart: React.FC<CheckoutProps> = ({ active, handleClick }) => {
+const CloseCart = (props: Props) => {
+  const {closeCart} = props
   return (
-    <div
-      className={classNames(
-        '',
-        {
-          [cls.openCart]: active,
-        },
-        [cls.cart],
-      )}
-      onClick={handleClick}>
-      <div className={cls.heading}>КОРЗИНА</div>
+    <div className={cls.cart}>
       <div className={cls.cartContent}>
         <div className={cls.cartTotal}>
           <div>
@@ -27,7 +17,7 @@ const CloseCart: React.FC<CheckoutProps> = ({ active, handleClick }) => {
             <h2>спасибо!</h2>
           </div>
           <p>Наш менеджер свяжется с Вами в течение 10-15 минут для подтверждения заказа</p>
-          <button onClick={handleClick}>Закрыть корзину</button>
+          <button onClick={() => closeCart()}>Закрыть корзину</button>
         </div>
       </div>
     </div>

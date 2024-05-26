@@ -1,9 +1,6 @@
 import React from 'react';
 import cls from './style.module.scss';
-import classNames from 'classnames';
-import { Card } from '../cart/ui/Card';
-import X from '@/public/assets/icons/x.svg';
-import { Button } from '@/shared/ui/Button';
+import { Card } from '../../ui/Card';
 import CloseCart from '../closeCart/CloseCart';
 
 const mockData = [
@@ -13,34 +10,19 @@ const mockData = [
   { id: 4, title: 'lol4', price: 150, description: 'lsadsdassada' },
 ];
 
-interface CheckoutProps {
-  active: boolean;
-  handleClick: () => void;
+interface Props {
+  nextStep: () => void;
 }
 
-const Checkout: React.FC<CheckoutProps> = ({ active, handleClick }) => {
-  const [openCart, setOpenCart] = React.useState(false);
-
+const Checkout = (props: Props) => {
+  const {nextStep} = props
   const handleInnerClick = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
   };
 
-  const handleClickPayment = () => {
-    setOpenCart(!openCart);
-  };
   return (
     <>
-      <div
-        className={classNames(
-          '',
-          {
-            [cls.openCart]: active,
-          },
-          [cls.cart],
-        )}
-        onClick={handleClick}>
-        <div className={cls.heading}>Корзина</div>
-
+      <div className={cls.cart}>
         <div className={cls.cartContent} onClick={handleInnerClick}>
           <div>
             <div className={cls.cartItems}>
@@ -83,12 +65,11 @@ const Checkout: React.FC<CheckoutProps> = ({ active, handleClick }) => {
             </div>
             <div className={cls.checkoutBtn}>
               <div className={cls.img}></div>
-              <button onClick={handleClickPayment}>ОФОРМИТЬ ЗАКАЗ</button>
+              <button onClick={() => nextStep()}>ОФОРМИТЬ ЗАКАЗ</button>
             </div>
           </div>
         </div>
       </div>
-      {openCart && <CloseCart active={openCart} handleClick={handleClickPayment} />}
     </>
   );
 };

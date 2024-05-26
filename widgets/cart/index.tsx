@@ -1,78 +1,52 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+import React, { ReactNode, useEffect, useRef } from 'react';
 import cls from './styles.module.scss';
 import classNames from 'classnames';
-import { Card } from './ui/Card';
-import { Button } from '@/shared/ui/Button';
-import Checkout from '../checkout/Checkout';
-
-const mockData = [
-  { id: 1, title: 'lol1', price: 150, description: 'lsadsdassada' },
-  { id: 2, title: 'lol2', price: 150, description: 'lsadsdassada' },
-  { id: 3, title: 'lol3', price: 150, description: 'lsadsdassada' },
-  { id: 4, title: 'lol4', price: 150, description: 'lsadsdassada' },
-  { id: 5, title: 'lol5', price: 150, description: 'lsadsdassada' },
-  { id: 6, title: 'lol6', price: 150, description: 'lsadsdassada' },
-  { id: 7, title: 'lol7', price: 150, description: 'lsadsdassada' },
-  { id: 8, title: 'lol8', price: 150, description: 'lsadsdassada' },
-  { id: 9, title: 'lol9', price: 150, description: 'lsadsdassada' },
-  { id: 10, title: 'lol10', price: 150, description: 'lsadsdassada' },
-];
+import Checkout from './steps/checkout/Checkout';
+import CloseCart from './steps/closeCart/CloseCart';
+import { Cart } from './steps/cart';
 
 export const CartWidget = () => {
   const [openCart, setOpenCart] = React.useState(false);
-  const [openCheckout, setOpenCheckout] = React.useState(false);
-  const cartRef = useRef(null);
+  const cartRef = useRef<HTMLDivElement | null>(null);
+  const [currentStep, setCurrentStep] = React.useState(1);
 
-  const handleClick = () => {
-    setOpenCart(!openCart);
-  };
-
-  const handleOpenCheckout = () => {
-    setOpenCheckout(!openCheckout);
-  };
-
-  const handleClickOutside = (event: MouseEvent) => {
-    if (cartRef.current && (cartRef.current as HTMLElement).contains(event.target as Node)) {
-      setOpenCart(false);
-    }
-  };
+  const nextStep = () => setCurrentStep(currentStep + 1);
+  const prevStep = () => setCurrentStep(currentStep - 1);
+  const closeCart = () => {
+    setCurrentStep(1)
+    setOpenCart(false)
+  }
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
+    function handleClickOutside(event: MouseEvent) {
+      if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
+        setOpenCart(false);
+      }
+    }
+    document.addEventListener('click', handleClickOutside)
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [cartRef]);
+      document.removeEventListener('click', handleClickOutside)
+    }
+  }, []);
+  
+  const cartSteps: Record<string, ReactNode>= {
+    1: <Cart nextStep={nextStep} />,
+    2: <Checkout nextStep={nextStep} />,
+    3: <CloseCart closeCart={closeCart} />,
+  }
 
   return (
     <>
       <div
         ref={cartRef}
-        className={classNames(
-          '',
-          {
+        className={classNames('',{
             [cls.openCart]: openCart,
-          },
-          [cls.cart],
-        )}>
-        <div className={cls.heading} onClick={handleClick}>Корзина</div>
-        <div className={cls.cartContent}>
-          <div className={cls.cartItems}>
-            {mockData.map((item, i) => (
-              <Card key={i} product={item} />
-            ))}
-          </div>
-          <div className={cls.cartTotal}>
-            <div>
-              <h3>Итого:</h3>
-              <p>1500 сом</p>
-            </div>
-            <button onClick={handleOpenCheckout}>К оплате</button>
-          </div>
-        </div>
+          },[cls.cart],)}
+        >
+        <div className={cls.heading} onClick={() => setOpenCart(!openCart)}>Корзина</div>
+        {cartSteps[currentStep]}
       </div>
-      {openCheckout && <Checkout active={openCheckout} handleClick={handleOpenCheckout} />}
     </>
   );
 };

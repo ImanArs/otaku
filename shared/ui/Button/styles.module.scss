@@ -49,6 +49,9 @@
   }
   &:hover {
     background: url(../../../public/assets/images/btn_bg_black_hover.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    // padding-bottom: 20px;
     color: #000;
   }
 }

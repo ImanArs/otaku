@@ -5,7 +5,11 @@ const baseURL = "http://13.60.49.147:8000/";
 
 interface Product {
   id: number;
-  images: { id: number; image: string }[] | null;
+  images: ImageTypes[] | null;
+}
+interface ImageTypes {
+  id: number;
+  image: string 
 }
 
 const DetailGallery = ({ product }: { product: Product }) => {
