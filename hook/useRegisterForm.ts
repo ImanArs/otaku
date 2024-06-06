@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 interface FormData {
-  id: number;
   first_name: string;
   last_name: string;
   email: string;
@@ -12,7 +11,6 @@ interface FormData {
 
 const useRegisterForm = () => {
   const [formData, setFormData] = useState<FormData>({
-    id: 0,
     first_name: '',
     last_name: '',
     email: '',
