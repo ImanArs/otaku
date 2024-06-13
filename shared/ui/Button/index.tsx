@@ -14,7 +14,7 @@ export const Button = (props: Props) => {
   return (
     <button className={classNames('', {
       [cls.button__red]: type === 'red',
-      [cls.button__black]: type === 'black', 
+      [cls.button__black]: type === 'black',
     },[cls.button, className])}>
       {children}
     </button>

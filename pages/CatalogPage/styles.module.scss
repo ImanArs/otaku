@@ -3,7 +3,6 @@
   min-height: 200vh;
   height: 100%;
   z-index: 2;
-  border: 1px solid red;
   color: #fff;
   position: relative;
   
@@ -14,11 +13,10 @@
     left: 0;
     padding: 10px;
     align-self: self-start;
-    border-right: 1px solid #ccc; /* Optional: Add a border to separate the sidebar from the content */
+    border-right: 1px solid #ccc;
   }
 
   .catalogContent {
-    // grid-area: catalogContent;
     margin-left: 300px;
     max-width: 1200px;
     width: 100%;

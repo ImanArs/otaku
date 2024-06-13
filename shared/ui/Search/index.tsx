@@ -11,7 +11,7 @@ interface Product {
 interface SearchProps {
   reversed?: boolean;
   className?: string;
-  searchArr: Product[];
+  searchArr: any[];
 }
 
 export const Search: React.FC<SearchProps> = ({ reversed, className, searchArr }) => {
@@ -20,6 +20,8 @@ export const Search: React.FC<SearchProps> = ({ reversed, className, searchArr }
   const filteredProducts = searchArr?.filter(product =>
     product.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
+  console.log(searchArr);
+  
 
   const toggleSearch = () => {
     // setOpenSearch(!openSearch); 
@@ -46,13 +48,24 @@ export const Search: React.FC<SearchProps> = ({ reversed, className, searchArr }
             />
             <div className={cls.search_results}>
               {searchTerm && (
-                <ul>
+                <ul className={cls.search_results_wrapper}>
+                  {filteredProducts?.length === 0 && (
+                    <div className={cls.result_item}>
+                      <p>Ничего не найдено</p>
+                    </div>
+                  )}
                   {filteredProducts?.map(product => (
-                    <li key={product.id}>
+                    <li key={product.id} className={cls.result_item}>
                       <Link href={`/detail/${product.id}`}>
-                      {product.title}
+                        <div className={cls.card}>
+                          <img src={`http://13.60.49.147:8000${product.images[0].image}`} alt={product.title} />
+                            <div className={cls.item_info}>
+                              <h4>{product.title}</h4>
+                              <h5>{product.price} сом</h5>
+                              <p>{product.description}</p>
+                            </div>
+                        </div>
                       </Link>
-                    
                     </li>
                   ))}
                 </ul>

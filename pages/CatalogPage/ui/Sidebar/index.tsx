@@ -4,6 +4,7 @@ import useCategory from "@/hook/UseCategory";
 import Checkbox from "../checkbox";
 import classNames from "classnames";
 import ReactSlider from 'react-slider'
+import { useCatalog } from "../../model";
 
 interface Category {
   id: number;
@@ -22,15 +23,8 @@ const Sidebar = ({className}: {className?: string;}) => {
   const [isOpen, setIsOpen] = useState(false);
   const categories = useCategory();
   
-  const [sliderValues, setSliderValues] = useState([0, 10000]);
-  const [checkedCategories, setCheckedCategories] = useState<(Category | SubCategory)[]>([]);
-
-  const handleCheckboxChange = (obj: Category | SubCategory) => {
-    setCheckedCategories((prev) => 
-      prev.includes(obj) ? prev.filter((item) => item !== obj) : [...prev, obj]
-    );
-  };
-
+  const {sliderValues, setSliderValues, checkedCategories, handleCheckboxChange, setCheckedCategories} = useCatalog()
+  
   return (
     <>
       <button className={classNames([cls.buttonopen, className])} onClick={() => setIsOpen(!isOpen)}>Фильтр</button>

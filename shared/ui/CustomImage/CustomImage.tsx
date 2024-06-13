@@ -12,6 +12,7 @@ interface Props {
 
 export const CustomImage = (props: Props) => {
   const { src, alt, children, color, className } = props
+  
   return (
     <div className={classNames([cls.img, {
       [cls.black]: color === 'black',

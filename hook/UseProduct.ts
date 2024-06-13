@@ -1,6 +1,20 @@
 "use client"
 import { useEffect, useState } from 'react';
 
+
+interface Category {
+  id: number;
+  name: string;
+  subCategories: SubCategory[];
+  codename: string;
+}
+
+interface SubCategory {
+  id: number;
+  name: string;
+  codename: string;
+}
+
 const useProduct = () => {
   const [products, setProducts] = useState([]);
 

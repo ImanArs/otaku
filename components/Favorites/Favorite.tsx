@@ -9,7 +9,7 @@ import Link from 'next/link';
 const Favorites: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-
+  
   useEffect(() => {
     const token = getCookie('access');
     setIsAuthenticated(!!token);
