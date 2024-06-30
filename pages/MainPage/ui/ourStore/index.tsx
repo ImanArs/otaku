@@ -1,17 +1,16 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import cls from "./styles.module.scss";
-import { Button } from "@/shared/ui/Button";
+import cls from './styles.module.scss';
+import { Button } from '@/shared/ui/Button';
 
-import { Pagination, A11y } from "swiper/modules";
+import { Pagination, A11y } from 'swiper/modules';
 
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 const OurStore = () => {
   return (
@@ -29,8 +28,7 @@ const OurStore = () => {
             modules={[Pagination, A11y]}
             slidesPerView={1}
             pagination={{ clickable: true }}
-            className="mySwiper"
-          >
+            className="mySwiper">
             <SwiperSlide>
               <img
                 src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
@@ -65,15 +63,14 @@ const OurStore = () => {
         </div>
         <div className={cls.info}>
           <h2>
-            OTAKU – ваш личный портал в мир японской культуры, где каждый шаг
-            открывает новую страницу любимой манги или аниме.
+            OTAKU – ваш личный портал в мир японской культуры, где каждый шаг открывает новую
+            страницу любимой манги или аниме.
           </h2>
           <p>
-            В OTAKU на вас витает аромат зеленого чая и легкие нотки сакуры.
-            Каждый уголок здесь пропитан духом приключений и творчества. В нашем
-            магазине вы не просто покупатель, а член большой и дружной семьи
-            отаку, где каждый сотрудник готов поделиться своими знаниями и
-            помочь найти именно то, что зажглось в вашем воображении.
+            В OTAKU на вас витает аромат зеленого чая и легкие нотки сакуры. Каждый уголок здесь
+            пропитан духом приключений и творчества. В нашем магазине вы не просто покупатель, а
+            член большой и дружной семьи отаку, где каждый сотрудник готов поделиться своими
+            знаниями и помочь найти именно то, что зажглось в вашем воображении.
           </p>
           <div className={cls.actions}>
             <Button type="red">Каталог</Button>

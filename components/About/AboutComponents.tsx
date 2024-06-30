@@ -6,7 +6,6 @@ import { Pagination, A11y } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import s from './aboutcom.module.scss';
@@ -20,57 +19,58 @@ export default function AboutComponents() {
       <div className={s.about_one}>
         <div className={s.about_one_text}>
           <p>
-
-            Приветствуем вас в мире &ldquo;OTAKU&ldquo; – вашем надежном
-            проводнике по вселенной аниме, где любовь к японской культуре
-            встречает страсть к высококачественной атрибутике. Мы – команда
-            энтузиастов из сердца Бишкека, и наша миссия – делать мир ярче и
-            ближе к мечтам каждого отаку.
+            Приветствуем вас в мире &ldquo;OTAKU&ldquo; – вашем надежном проводнике по вселенной
+            аниме, где любовь к японской культуре встречает страсть к высококачественной атрибутике.
+            Мы – команда энтузиастов из сердца Бишкека, и наша миссия – делать мир ярче и ближе к
+            мечтам каждого отаку.
           </p>
           <br />
           <br />
           <p>
-            &ldquo;О нас&ldquo; – это не просто раздел на сайте, это история о
-            людях, которые вложили душу в создание места, где каждый предмет
-            пронизан духом приключений и великих саг. Наш теплый коллектив – это
-            не только команда профессионалов, но и настоящие фанаты аниме,
-            которые знают о своем деле абсолютно все.
+            &ldquo;О нас&ldquo; – это не просто раздел на сайте, это история о людях, которые
+            вложили душу в создание места, где каждый предмет пронизан духом приключений и великих
+            саг. Наш теплый коллектив – это не только команда профессионалов, но и настоящие фанаты
+            аниме, которые знают о своем деле абсолютно все.
           </p>
         </div>
-        <div className={cls.newest} style={{ background: 'transparent' }}>
-          <div className={cls.newest_wrapper} style={{ background: 'transparent' }}>
-            <div className={cls.right} style={{ borderBottom: 'black' }}>
-              <div className={cls.img} style={{ width: '269px', height: '202px' }}>
+        <div className={s.newest} style={{ background: 'transparent' }}>
+          <div className={s.newest_wrapper}>
+            <div className={s.right}>
+              <div className={s.img}>
                 <Swiper
                   modules={[Pagination, A11y]}
                   slidesPerView={1}
                   pagination={{ clickable: true }}
-                  className="mySwiperBlack">
+                  className="mySwiper">
                   <SwiperSlide>
                     <img
-                      style={{ width: '269px', height: '202px' }}
                       src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
                       alt=""
                     />
-                    <div className={cls.info}>
-                      <h2>Lorem, ipsum dolor.</h2>
-                      <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, officia!
-                      </p>
-                    </div>
                   </SwiperSlide>
                   <SwiperSlide>
                     <img
-                      style={{ width: '269px', height: '202px' }}
                       src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
                       alt=""
                     />
-                    <div className={cls.info}>
-                      <h2>Lorem, ipsum dolor.</h2>
-                      <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, officia!
-                      </p>
-                    </div>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img
+                      src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+                      alt=""
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img
+                      src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+                      alt=""
+                    />
+                  </SwiperSlide>
+                  <SwiperSlide>
+                    <img
+                      src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+                      alt=""
+                    />
                   </SwiperSlide>
                 </Swiper>
               </div>
@@ -81,10 +81,9 @@ export default function AboutComponents() {
       <div className={s.about_two}>
         <div>
           <p>
-            Мы гордимся тем, что предлагаем широчайший ассортимент продукции: от
-            эксклюзивных фигурок до авторских принтов и аксессуаров. В
-            &ldquo;OTAKU&ldquo; каждый товар проходит тщательный отбор, чтобы вы
-            могли наслаждаться истинным качеством и долговечностью.
+            Мы гордимся тем, что предлагаем широчайший ассортимент продукции: от эксклюзивных
+            фигурок до авторских принтов и аксессуаров. В &ldquo;OTAKU&ldquo; каждый товар проходит
+            тщательный отбор, чтобы вы могли наслаждаться истинным качеством и долговечностью.
           </p>
           <Button type="red">
             <Link href="/catalog">КАТАЛОГ</Link>
@@ -94,38 +93,44 @@ export default function AboutComponents() {
       <div className={s.about_thee}>
         <h1>Наши магазины</h1>
         <div className={s.about_thee_text}>
-          <div className={cls.newest} style={{ background: 'transparent' }}>
-            <div className={cls.newest_wrapper} style={{ background: 'transparent' }}>
-              <div className={cls.right} style={{ borderBottom: 'black' }}>
-                <div className={cls.img}>
+          <div className={s.newest} style={{ background: 'transparent' }}>
+            <div className={s.newest_wrapper}>
+              <div className={s.right}>
+                <div className={s.img}>
                   <Swiper
                     modules={[Pagination, A11y]}
                     slidesPerView={1}
                     pagination={{ clickable: true }}
-                    className="mySwiperBlack">
+                    className="mySwiper">
                     <SwiperSlide>
                       <img
                         src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
                         alt=""
                       />
-                      <div className={cls.info}>
-                        <h2>Lorem, ipsum dolor.</h2>
-                        <p>
-                          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, officia!
-                        </p>
-                      </div>
                     </SwiperSlide>
                     <SwiperSlide>
                       <img
                         src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
                         alt=""
                       />
-                      <div className={cls.info}>
-                        <h2>Lorem, ipsum dolor.</h2>
-                        <p>
-                          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, officia!
-                        </p>
-                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img
+                        src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+                        alt=""
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img
+                        src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+                        alt=""
+                      />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img
+                        src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+                        alt=""
+                      />
                     </SwiperSlide>
                   </Swiper>
                 </div>
@@ -160,38 +165,31 @@ export default function AboutComponents() {
           Вас к нам в гости!
           <br />
           <br />
-          &ldquo;О нас&ldquo; – это не просто раздел на сайте, это история о
-          людях, которые вложили душу в создание места, где каждый предмет
-          пронизан духом приключений и великих саг. Наш теплый коллектив – это
-          не только команда профессионалов, но и настоящие фанаты аниме, которые
-          знают о своем деле абсолютно все.&ldquo;О нас&ldquo; – это не просто
-          раздел на сайте, это история о людях, которые вложили душу в создание
-          места, где каждый предмет пронизан духом приключений и великих саг.
-          Наш теплый коллектив – это не только команда профессионалов, но и
-          настоящие фанаты аниме, которые знают о своем деле абсолютно
-          все.&ldquo;О нас&ldquo; – это не просто раздел на сайте, это история о
-          людях, которые вложили душу в создание места, где каждый предмет
-          пронизан духом приключений и великих саг. Наш теплый коллектив – это
-          не только команда профессионалов, но и настоящие фанаты аниме, которые
-          знают о своем деле абсолютно все.&ldquo;О нас&ldquo; – это не просто
-          раздел на сайте, это история о людях, которые вложили душу в создание
-          места, где каждый предмет пронизан духом приключений и великих саг.
-          Наш теплый коллектив – это не только команда профессионалов, но и
-          настоящие фанаты аниме, которые знают о своем деле абсолютно
-          все.&ldquo;О нас&ldquo; – это не просто раздел на сайте, это история о
-          людях, которые вложили душу в создание места, где каждый предмет
-          пронизан духом приключений и великих саг. Наш теплый коллектив – это
-          не только команда профессионалов, но и настоящие фанаты аниме, которые
-          знают о своем деле абсолютно все.&ldquo;О нас&ldquo; – это не просто
-          раздел на сайте, это история о людях, которые вложили душу в создание
-          места, где каждый предмет пронизан духом приключений и великих саг.
-          Наш теплый коллектив – это не только команда профессионалов, но и
-          настоящие фанаты аниме, которые знают о своем деле абсолютно
-          все.&ldquo;О нас&ldquo; – это не просто раздел на сайте, это история о
-          людях, которые вложили душу в создание места, где каждый предмет
-          пронизан духом приключений и великих саг. Наш теплый коллектив – это
-          не только команда профессионалов, но и настоящие фанаты аниме, которые
-          знают о своем деле абсолютно все.
+          &ldquo;О нас&ldquo; – это не просто раздел на сайте, это история о людях, которые вложили
+          душу в создание места, где каждый предмет пронизан духом приключений и великих саг. Наш
+          теплый коллектив – это не только команда профессионалов, но и настоящие фанаты аниме,
+          которые знают о своем деле абсолютно все.&ldquo;О нас&ldquo; – это не просто раздел на
+          сайте, это история о людях, которые вложили душу в создание места, где каждый предмет
+          пронизан духом приключений и великих саг. Наш теплый коллектив – это не только команда
+          профессионалов, но и настоящие фанаты аниме, которые знают о своем деле абсолютно
+          все.&ldquo;О нас&ldquo; – это не просто раздел на сайте, это история о людях, которые
+          вложили душу в создание места, где каждый предмет пронизан духом приключений и великих
+          саг. Наш теплый коллектив – это не только команда профессионалов, но и настоящие фанаты
+          аниме, которые знают о своем деле абсолютно все.&ldquo;О нас&ldquo; – это не просто раздел
+          на сайте, это история о людях, которые вложили душу в создание места, где каждый предмет
+          пронизан духом приключений и великих саг. Наш теплый коллектив – это не только команда
+          профессионалов, но и настоящие фанаты аниме, которые знают о своем деле абсолютно
+          все.&ldquo;О нас&ldquo; – это не просто раздел на сайте, это история о людях, которые
+          вложили душу в создание места, где каждый предмет пронизан духом приключений и великих
+          саг. Наш теплый коллектив – это не только команда профессионалов, но и настоящие фанаты
+          аниме, которые знают о своем деле абсолютно все.&ldquo;О нас&ldquo; – это не просто раздел
+          на сайте, это история о людях, которые вложили душу в создание места, где каждый предмет
+          пронизан духом приключений и великих саг. Наш теплый коллектив – это не только команда
+          профессионалов, но и настоящие фанаты аниме, которые знают о своем деле абсолютно
+          все.&ldquo;О нас&ldquo; – это не просто раздел на сайте, это история о людях, которые
+          вложили душу в создание места, где каждый предмет пронизан духом приключений и великих
+          саг. Наш теплый коллектив – это не только команда профессионалов, но и настоящие фанаты
+          аниме, которые знают о своем деле абсолютно все.
         </h5>
       </div>
     </div>
