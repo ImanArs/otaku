@@ -1,9 +1,12 @@
 import Favorites from '@/components/Favorites/Favorite'
-import React from 'react'
+import { Loading } from '@/shared/ui/loading'
+import React, { Suspense } from 'react'
 
 const Favorite = () => {
   return (
-    <Favorites />
+    <Suspense fallback={<Loading />}>
+      <Favorites />
+    </Suspense>
   )
 }
 

@@ -65,6 +65,11 @@
     line-height: 58px;
   }
 }
+.productsWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
 
 @media screen and (max-width: 600px) {
   .main {

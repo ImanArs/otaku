@@ -32,12 +32,16 @@ export default function Header() {
         <Link href="/">
           <img className={s.logo} src="/assets/images/logo.svg" alt="logo" />
         </Link>
-        {isAuthenticated ? null : (
+        {/* {isAuthenticated ? null : (
           <div className={s.header_blocks_registr}>
             <span onClick={() => setShowLoginModal(true)}>Войти</span>/
             <span onClick={() => setShowRegisterModal(true)}>Зарегистрироваться</span>
           </div>
-        )}
+        )} */}
+          <div className={s.header_blocks_registr}>
+            <span onClick={() => setShowLoginModal(true)}>Войти</span>/
+            <span onClick={() => setShowRegisterModal(true)}>Зарегистрироваться</span>
+          </div>
         <div className={s.header_blocks_text} onClick={() => setOpenMenu(!openMenu)}>
           <Menu />
         </div>

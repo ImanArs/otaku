@@ -1,8 +1,13 @@
 import Payment from '@/components/payment/Payment';
-import React from 'react';
+import { Loading } from '@/shared/ui/loading';
+import React, { Suspense } from 'react';
 
 const page = () => {
-  return <Payment />;
+  return (
+    <Suspense fallback={<Loading />}>
+      <Payment />
+    </Suspense>
+  )
 };
 
 export default page;

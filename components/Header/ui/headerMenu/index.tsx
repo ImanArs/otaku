@@ -8,7 +8,7 @@ const headerMenuLinks = [
   { name: 'Контакты', link: '/contacts' },
   { name: 'МАГАЗИНЫ', link: '/shops' },
   { name: 'Доставка', link: '/delivery' },
-  { name: 'Возврат', link: '/return' },
+  { name: 'Возврат', link: '/refund' },
   { name: 'О нас', link: '/about' },
   { name: 'новости', link: '/news' },
 ];

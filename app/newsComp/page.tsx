@@ -1,8 +1,13 @@
 import NewsComponent from '@/components/News/NewsComponent';
-import React from 'react';
+import { Loading } from '@/shared/ui/loading';
+import React, { Suspense } from 'react';
 
 const page = () => {
-  return <NewsComponent />;
+  return (
+    <Suspense fallback={<Loading />}>
+      <NewsComponent />
+    </Suspense>
+  )
 };
 
 export default page;
