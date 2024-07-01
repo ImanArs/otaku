@@ -145,11 +145,11 @@
   cursor: pointer;
 }
 .truck {
-  background: #DD2C40;
+  background: #dd2c40;
   padding: 3px 0;
 }
 @media screen and (min-width: 768px) {
-  .buttonopen{
+  .buttonopen {
     display: none;
   }
 
@@ -158,13 +158,13 @@
   }
 
   .sidebar {
-    transform: none; 
-    transition: none; 
+    transform: none;
+    transition: none;
   }
 }
 @media screen and (max-width: 768px) {
- .sidebar{
-  background: #000;
-  position: fixed;
- }
+  .sidebar {
+    background: #000;
+    position: fixed;
+  }
 }

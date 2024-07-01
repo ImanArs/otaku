@@ -1,5 +1,5 @@
-import useProduct from "@/hook/UseProduct";
-import { create } from "zustand";
+import useProduct from '@/hook/UseProduct';
+import { create } from 'zustand';
 
 interface Category {
   id: number;
@@ -22,7 +22,7 @@ export const useCatalog = create<{
   setSliderValues: (values: number[]) => void;
   handleCheckboxChange: (obj: Category | SubCategory) => void;
   setCheckedCategories: (categories: (Category | SubCategory)[]) => void;
-  setProducts: () => void
+  setProducts: () => void;
   // filteredProducts: () => void
 }>((set, get) => ({
   sliderValues: [0, 10000],
@@ -34,7 +34,7 @@ export const useCatalog = create<{
     set((state) =>
       state.checkedCategories.includes(obj)
         ? { checkedCategories: state.checkedCategories.filter((item) => item !== obj) }
-        : { checkedCategories: [...state.checkedCategories, obj] }
+        : { checkedCategories: [...state.checkedCategories, obj] },
     ),
   setCheckedCategories: (categories) => set(() => ({ checkedCategories: categories })),
   setProducts: async () => {
@@ -45,11 +45,11 @@ export const useCatalog = create<{
         throw new Error('Failed to fetch products');
       }
       const data = await response.json();
-    
-      set({ products: data.results, isLoading: false }); 
+
+      set({ products: data.results, isLoading: false });
     } catch (error) {
       console.error('Error fetching products:', error);
-      set({ isLoading: false }); 
+      set({ isLoading: false });
     }
   },
   // filteredProducts: () => set({

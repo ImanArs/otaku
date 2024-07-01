@@ -17,8 +17,7 @@ interface Product {
   subcategory?: { codename: string };
   images: { id: number; image: string }[] | null;
 }
-const baseURL = "http://13.60.49.147:8000/";
-
+const baseURL = 'http://13.60.49.147:8000/';
 
 export const ProductCard = ({ product }: { product: Product }) => {
   const {addToFavorite, getAllFavorites, removeFavorite, favorites} = useProductcard()
@@ -28,6 +27,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
     getAllFavorites()
   }, [favorites, getAllFavorites])
   const isInFavourite = favorites.some((item) => item.id === product.id);
+
   const quantity = false;
   const sale = false;
 
@@ -47,6 +47,26 @@ export const ProductCard = ({ product }: { product: Product }) => {
       addToFavorite(product.id)
     }
   }
+
+  const addFavourite = async () => {
+    try {
+      const response = await axios.get(
+        `http://13.60.49.147:8000/favorites/products/add/${product.id}/`,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        },
+      );
+      if (response.status === 200 || 201) {
+        setIsFavourite(true);
+      } else {
+        console.error('Error:', response.status, response.statusText);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div className={cls.card}>
@@ -95,8 +115,7 @@ export const ProductCard = ({ product }: { product: Product }) => {
         </div>
       <div className={cls.card_actions}>
         <button onClick={() => console.log('купить')}>купить</button>
-        <button onClick={() => console.log('смотреть')}>
-          {' '}
+        <button>
           <Link href={`/detail/${categoryCodename}/${subcategoryCodename}/${product.id}`}>
             Смотреть
           </Link>
