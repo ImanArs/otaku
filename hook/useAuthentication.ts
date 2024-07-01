@@ -21,9 +21,11 @@ const useAuthentication = () => {
         throw new Error('Failed to log in');
       }
       const data = await response.json();
-      const { access } = data;
+      const { access, refresh } = data;
+      localStorage.setItem('accessToken', access);
+      localStorage.setItem('refreshToken', refresh);
       document.cookie = `access=${access}; path=/`;
-      window.location.reload();
+      // window.location.reload();
     } catch (error) {
       setError('Failed to log in');
     } finally {

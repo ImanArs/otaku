@@ -12,11 +12,15 @@ export const CartWidget = () => {
   const [currentStep, setCurrentStep] = React.useState(1);
 
   const nextStep = () => setCurrentStep(currentStep + 1);
-  const prevStep = () => setCurrentStep(currentStep - 1);
   const closeCart = () => {
     setCurrentStep(1)
     setOpenCart(false)
   }
+
+  useEffect(() => {
+        console.log(cartRef);
+        console.log(123);
+  }, [openCart])
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -24,8 +28,12 @@ export const CartWidget = () => {
         setOpenCart(false);
       }
     }
+    console.log(1);
     document.addEventListener('click', handleClickOutside)
     return () => {
+      // setCurrentStep(1)
+      console.log(2);
+      
       document.removeEventListener('click', handleClickOutside)
     }
   }, []);
